@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3b0341ca-9362-4c6a-952b-4b78cc960140}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{838aec15-3dde-46d3-a0e4-46b028cbd294}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{94828282-a1d2-4e23-89f5-548f011df661}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GigeCameraDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GigeCameraDemoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GigeCameraDemo.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GigeCameraDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GigeCameraDemoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GigeCameraDemo.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\GigeCameraDemo.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Res\0000.png" />
+    <None Include="Res\0001.png" />
+    <None Include="Res\0010.png" />
+    <None Include="Res\0011.png" />
+    <None Include="Res\0020.png" />
+    <None Include="Res\0021.png" />
+    <None Include="Res\0030.png" />
+    <None Include="Res\0031.png" />
+    <None Include="Res\0040.png" />
+    <None Include="Res\0041.png" />
+    <None Include="Res\0050.png" />
+    <None Include="Res\0051.png" />
+    <None Include="Res\0060.png" />
+    <None Include="Res\0061.png" />
+    <None Include="Res\0070.png" />
+    <None Include="Res\0071.png" />
+    <None Include="Res\0080.png" />
+    <None Include="Res\0081.png" />
+    <None Include="Res\0090.png" />
+    <None Include="Res\0091.png" />
+    <None Include="Res\0100.png" />
+    <None Include="Res\0101.png" />
+    <None Include="Res\0110.png" />
+    <None Include="Res\0111.png" />
+    <None Include="Res\0120.png" />
+    <None Include="Res\0121.png" />
+    <None Include="Res\0130.png" />
+    <None Include="Res\0131.png" />
+    <None Include="Res\0140.png" />
+    <None Include="Res\0141.png" />
+    <None Include="Res\0150.png" />
+    <None Include="Res\0151.png" />
+    <None Include="Res\0160.png" />
+    <None Include="Res\0161.png" />
+    <None Include="Res\0170.png" />
+    <None Include="Res\0171.png" />
+    <None Include="Res\0180.png" />
+    <None Include="Res\0181.png" />
+    <None Include="Res\0190.png" />
+    <None Include="Res\0191.png" />
+    <None Include="Res\0200.png" />
+    <None Include="Res\0201.png" />
+    <None Include="Res\0210.png" />
+    <None Include="Res\0211.png" />
+    <None Include="Res\0220.png" />
+    <None Include="Res\0221.png" />
+    <None Include="Res\0230.png" />
+    <None Include="Res\0240.png" />
+    <None Include="Res\0250.png" />
+    <None Include="Res\0260.png" />
+    <None Include="Res\0270.png" />
+    <None Include="Res\0271.png" />
+    <None Include="Res\0272.png" />
+    <None Include="Res\0273.png" />
+    <None Include="Res\0274.png" />
+    <None Include="Res\0275.png" />
+    <None Include="Res\1000.png" />
+  </ItemGroup>
+</Project>

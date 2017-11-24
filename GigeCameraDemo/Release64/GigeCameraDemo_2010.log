@@ -1,0 +1,122 @@
+﻿生成启动时间为 2017/2/22 10:40:40。
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo201610271641\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Release64\GigeCameraDemo.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Release64\GigeCameraDemo.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       PreBuildEvent:
+         if exist %SystemRoot%\SysWOW64 goto end
+         echo (Sapera LT warning) Compiling a 64-bit configuration under 32-bit Windows
+         :end
+         
+         :VCEnd
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I. /I"C:\Program Files\Teledyne DALSA\Sapera\Include" /I"C:\Program Files\Teledyne DALSA\Sapera\Classes\Basic" /I"C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui" /Zi /nologo /W3 /WX- /O2 /Ob1 /D WIN32 /D NDEBUG /D _WINDOWS /D WINVER=0x0501 /D _WIN32_WINNT=0x0501 /D _VC80_UPGRADE=0x0710 /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release64\\" /Fd".\Release64\vc100.pdb" /Gd /TP /errorReport:prompt GigeCameraDemo.cpp GigeCameraDemoDlg.cpp SerialPort.cpp
+         GigeCameraDemo.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(48): warning C4995: “gets”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(52): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(55): warning C4995: “vsprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(21): warning C4995: “strcat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(22): warning C4995: “strcpy”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(30): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(31): warning C4995: “vswprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(33): warning C4995: “wcscat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(35): warning C4995: “wcscpy”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(757): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(766): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(775): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\intrin.h(1087): warning C4995: “wcscat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\intrin.h(1089): warning C4995: “wcscpy”: 名称被标记为 #pragma deprecated
+         GigeCameraDemoDlg.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(48): warning C4995: “gets”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(52): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(55): warning C4995: “vsprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(21): warning C4995: “strcat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(22): warning C4995: “strcpy”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(30): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(31): warning C4995: “vswprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(33): warning C4995: “wcscat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(35): warning C4995: “wcscpy”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(757): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(766): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(775): warning C4995: “swprintf”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\intrin.h(1087): warning C4995: “wcscat”: 名称被标记为 #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\intrin.h(1089): warning C4995: “wcscpy”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(416): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(417): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(417): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(304): warning C4101: “time”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(518): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(518): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(528): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>GigeCameraDemoDlg.cpp(438): warning C4101: “time”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(440): warning C4101: “ch_ImageDir_1”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(441): warning C4101: “data”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(610): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(610): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(620): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>GigeCameraDemoDlg.cpp(554): warning C4101: “ch_ImageDir_2”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(552): warning C4101: “time”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(637): warning C4101: “iCounter”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(642): warning C4101: “ch_tmp”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(641): warning C4101: “ch_ImageFileName_1”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(717): warning C4101: “iCounter”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(721): warning C4101: “ch_ImageFileName_2”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(786): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+     1>GigeCameraDemoDlg.cpp(823): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(823): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(992): warning C4995: “strcpy”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(992): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : 参见“strcpy”的声明
+     1>GigeCameraDemoDlg.cpp(1038): warning C4101: “s”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(1592): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(1592): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>GigeCameraDemoDlg.cpp(1626): warning C4101: “chPath”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(1685): warning C4101: “word”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(1814): warning C4995: “strcpy”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(1814): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : 参见“strcpy”的声明
+         SerialPort.cpp
+     1>SerialPort.cpp(133): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(134): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(415): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(613): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : 参见“strcpy”的声明
+         Generating Code...
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo201610271641\gigecamerademo\gigecamerademodlg.cpp(799): warning C4715: “GetPathUseSpace”: 不是所有的控件路径都返回值
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _AFXDLL /D NDEBUG /D _VC80_UPGRADE=0x0710 /D _AFXDLL /l"0x0409" /I..\..\..\..\Classes\Gui /nologo /fo"Release64\GigeCameraDemo.res" GigeCameraDemo.rc 
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo201610271641\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(1)正在节点 3 上生成“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(2:3) (GetResolvedLinkLibs 个目标)。
+     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\Source\CorAPI\Win32\CorApi_2010.vcxproj' does not exist.
+     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\Basic\SapClassBasic_2010.vcxproj' does not exist.
+     2>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(GetResolvedLinkLibs 个目标)的操作。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Release64\GigeCameraDemo.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64\VS2010" /LIBPATH:"C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64" SapClassBasic.lib SapClassGui.lib ZLBImage.lib ZLBCommon.lib /MANIFEST /ManifestFile:"Release64\GigeCameraDemo.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Release64\GigeCameraDemo.pdb" /SUBSYSTEM:WINDOWS /OPT:NOREF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release64\GigeCameraDemo.lib" /MACHINE:X64 Release64\GigeCameraDemo.res
+         .\Release64\GigeCameraDemo.obj
+         .\Release64\GigeCameraDemoDlg.obj
+         .\Release64\SerialPort.obj
+         GigeCameraDemo_2010.vcxproj -> C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo201610271641\GigeCameraDemo\Release64\GigeCameraDemo.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Release64\GigeCameraDemo.exe;#1" /manifest Release64\GigeCameraDemo.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       PostBuildEvent:
+         copy Release64\GigeCameraDemo.exe D:\Debug64\
+         :VCEnd
+         已复制         1 个文件。
+       FinalizeBuildStatus:
+         正在删除文件“Release64\GigeCameraDemo.unsuccessfulbuild”。
+         正在对“Release64\GigeCameraDemo.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo201610271641\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.40
