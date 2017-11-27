@@ -134,7 +134,9 @@ public:
 public:
 	CSplashWnd *m_pSplashWindow;
 	CMessageDialog *pMessageDialog;
-	CSerialPort m_SerialPort;
+	//CSerialPort m_SerialPort;
+	CSerialPort m_SerialPortOne;
+	CSerialPort m_SerialPortTwo;
 	NOTIFYICONDATA nid;
 	bool m_bTimerFlag;
 	POINT Old;

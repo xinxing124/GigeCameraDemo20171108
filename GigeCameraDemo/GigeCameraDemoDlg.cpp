@@ -1059,42 +1059,82 @@ double ReadFreeSpace(CString strPath)
 	}
 	return dRet;
 }
+
 LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
 {
+	static BYTE RBufOne[25]={0};
+	static int RPosOne=0;
+	static BYTE RBufTwo[25]={0};
+	static int RPosTwo=0;
+	INT16 revint16[4],rint16[8];
+	int iTemp;
 	m_RevFlag=true;
-
-	m_strReceive.AppendChar((UINT)wParam);
-	if(m_strReceive.GetAt(0)=='#'&&m_strReceive.GetAt(m_strReceive.GetLength()-1)=='$')
+	switch((UINT)lParam)
 	{
-		CString strMsg=m_strReceive.Mid(1,m_strReceive.GetLength()-2);
-		m_strReceive="";
-		if(strMsg.Find("Remote Close")>-1)
-		{
-			EndDialog(TRUE);
-			return 0;
+	case 1:
+		RBufOne[RPosOne++]=(UINT)wParam;
+		if(RPosOne>13){
+			for(int i=3,j=0;i<11;j++,i+=2)
+				revint16[j] =RBufOne[i] * 256+ RBufOne[i + 1];
+			iTemp=(int)(revint16[0]/100.0);
+			m_dbVoltage_1=iTemp/10.0;
+			//iTemp=(int)(revint16[1]/100.0);
+			//pThis->m_dbSpeed =iTemp/10.0;
+			iTemp=(int)(revint16[2]/100.0);
+			m_dbVoltage_2 =iTemp/10.0;
+			RPosOne=0;
 		}
-		CString strRec;
-		SYSTEMTIME time;
-		::GetLocalTime(&time);
-
-		strRec.Format("%d-%02d-%02d %02d:%02d:%02d.%03d Num=%ld Info=%s",time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,time.wMilliseconds,m_iCountImage_1,strMsg);
-		//str.Format(_T("Frames acquired in trash buffer: %s||"), (LPSTR)wParam);
-		m_statusWnd.SetWindowText(strRec);
-		CString str;
-		str.Format("%s\\%s\\Record.rec",m_strStoragePath.GetBuffer(),m_pTimeFileName);
-		ZLBCreateDirectory(str.GetBuffer());
-		CStdioFile Rec;
-		Rec.Open(str,CFile::modeCreate|CFile::modeNoTruncate|CFile::modeWrite);
-		Rec.SeekToEnd();
-		Rec.WriteString(strRec+"\r\n");
-		Rec.Close();
-		
+		break;
+	case 2:
+		RBufTwo[RPosTwo++]=(UINT)wParam;
+		if(RPosTwo>21){
+			for(int m=3,n=0;m<19;n++,m+=2)
+				rint16[n] =RBufTwo[m] * 256+ RBufTwo[m + 1];
+			iTemp=(int)(rint16[4]+rint16[5]);
+			m_dbSpeed =iTemp/1.0;
+			RPosTwo=0;
+		}
+		break;
 	}
-	m_RevFlag=false;
-	
-
 	return 0;
 }
+
+//LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
+//{
+//	m_RevFlag=true;
+//
+//	m_strReceive.AppendChar((UINT)wParam);
+//	if(m_strReceive.GetAt(0)=='#'&&m_strReceive.GetAt(m_strReceive.GetLength()-1)=='$')
+//	{
+//		CString strMsg=m_strReceive.Mid(1,m_strReceive.GetLength()-2);
+//		m_strReceive="";
+//		if(strMsg.Find("Remote Close")>-1)
+//		{
+//			EndDialog(TRUE);
+//			return 0;
+//		}
+//		CString strRec;
+//		SYSTEMTIME time;
+//		::GetLocalTime(&time);
+//
+//		strRec.Format("%d-%02d-%02d %02d:%02d:%02d.%03d Num=%ld Info=%s",time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,time.wMilliseconds,m_iCountImage_1,strMsg);
+//		//str.Format(_T("Frames acquired in trash buffer: %s||"), (LPSTR)wParam);
+//		m_statusWnd.SetWindowText(strRec);
+//		CString str;
+//		str.Format("%s\\%s\\Record.rec",m_strStoragePath.GetBuffer(),m_pTimeFileName);
+//		ZLBCreateDirectory(str.GetBuffer());
+//		CStdioFile Rec;
+//		Rec.Open(str,CFile::modeCreate|CFile::modeNoTruncate|CFile::modeWrite);
+//		Rec.SeekToEnd();
+//		Rec.WriteString(strRec+"\r\n");
+//		Rec.Close();
+//		
+//	}
+//	m_RevFlag=false;
+//	
+//
+//	return 0;
+//}
 
 void us_Delay(ULONG ulMicroSeconds)  
 { 
@@ -1195,11 +1235,20 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);	// Set small icon
 	SetIcon(m_hIcon, TRUE);		// Set big icon
 
-	if(m_SerialPort.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
+	//if(m_SerialPort.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
+	//{
+	//	m_SerialPort.StartMonitoring();
+	//}
+	
+	if(m_SerialPortOne.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
 	{
-		m_SerialPort.StartMonitoring();
+		m_SerialPortOne.StartMonitoring();
 	}
-
+	
+	if(m_SerialPortTwo.InitPort(this,2,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
+	{
+		m_SerialPortTwo.StartMonitoring();
+	}
 	CString strCommand=AfxGetApp()->m_lpCmdLine;
 	BOOL bb=IsUserAdmin();
 
@@ -2055,7 +2104,8 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	{
 		CString temp;
 		temp.Format("#The drive does not exist,Reboot...$\r\n");
-		m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
+		//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
+		m_pSplashWindow->SetInfo(temp);
 		this->MessageBox("The drive does not exist,Reboot...","error");
 		exit(0);
 	}
@@ -2338,6 +2388,12 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 			InvalidateRect(&m_RectElectricShow_2);
 			InvalidateRect(&m_RectSpeedShow);
 		}
+	
+		byte sendvoltage[] = {0x01,0x03,0x02,0x58,0x00,0x04,0xC4,0x62};
+		byte sendfrequency[]={0x02,0x03,0x00,0x22,0x00,0x01,0x24,0x33};
+		m_SerialPortOne.WriteToPort((char*)sendvoltage,8);
+		m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
+
 	}
 	if(nIDEvent==2)
 	{
