@@ -1263,6 +1263,7 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	SetUI();
 	RefreshUI ();
 
+	m_iWindowMode=1;
 	//if(m_SerialPort.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
 	//{
 	//	m_SerialPort.StartMonitoring();
@@ -1312,11 +1313,11 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
 	//::SendMessage(pMessageDialog->m_hWnd,WM_MSG,(WPARAM)(LPCTSTR)temp,16);
 	
-	//if(m_iWindowMode==1)
-	//{
-	//	m_strInfo=temp;
-	//	InvalidateRect(&m_RectInfoShow);
-	//}
+	if(m_iWindowMode==1)
+	{
+		m_strInfo=temp;
+		InvalidateRect(&m_RectInfoShow);
+	}
 
 	#if _DEBUG
 	//CString str;
@@ -1379,11 +1380,11 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 			CString temp="#Both sides of the camera are normal$\r\n";
 			//CString temp="#Both sides of the camera are normal$";
 			//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
-			//if(m_iWindowMode==1)
-			//{
-			//	m_strInfo=temp;
-			//	InvalidateRect(&m_RectInfoShow);
-			//}
+			if(m_iWindowMode==1)
+			{
+				m_strInfo=temp;
+				InvalidateRect(&m_RectInfoShow);
+			}
 			//m_pSplashWindow->SetInfo(temp);
 			break;
 		}
@@ -1394,11 +1395,11 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 		CString temp="#No camera found or lack of camera$\r\n";
 		//CString temp="#No camera found or lack of camera$";
 		//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
-		//if(m_iWindowMode==1)
-		//{
-		//	m_strInfo=temp;
-		//	InvalidateRect(&m_RectInfoShow);
-		//}
+		if(m_iWindowMode==1)
+		{
+			m_strInfo=temp;
+			InvalidateRect(&m_RectInfoShow);
+		}
 		//m_pSplashWindow->SetInfo(temp);
 		::MessageBox(NULL,_T("No camera found or lack of camera"),_T("Message"),MB_ICONHAND);
 		EndDialog(TRUE);
@@ -1413,7 +1414,7 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	}
 		SetTimer(3,1000,NULL);
 
-	m_iWindowMode=1;
+
 
 #if 1
 	// Define objects
@@ -2438,10 +2439,10 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 		m_dFreeSpaceG=ReadFreeSpace(m_strStoragePath);
 		left=GetDirFileCount(m_strLeftPath);
 		right=GetDirFileCount(m_strRightPath);
-		if(m_TimeCount>20)
+		if(m_TimeCount>4)
 		{
 			m_TimeCount=0;
-			if(!m_RevFlag)
+			if(m_RevFlag)
 			{
 				::GetLocalTime(&time);
 				temp="";

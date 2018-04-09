@@ -1,6 +1,9 @@
-﻿生成启动时间为 4/9/2018 9:46:22 AM。
-     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(build 个目标)。
-     1>InitializeBuildStatus:
+﻿生成启动时间为 2018/4/9 11:01:08。
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug64\GigeCameraDemo.lastbuildstate”。
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1422,5): warning : The referenced project '..\..\..\..\Classes\Gui\SapClassGui_2010.vcxproj' does not exist.
+       InitializeBuildStatus:
          正在创建“Debug64\GigeCameraDemo.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        PreBuildEvent:
          if exist %SystemRoot%\SysWOW64 goto end
@@ -33,33 +36,33 @@
      1>GigeCameraDemoDlg.cpp(1075): warning C4244: “=”: 从“UINT”转换到“BYTE”，可能丢失数据
      1>GigeCameraDemoDlg.cpp(1089): warning C4244: “=”: 从“UINT”转换到“BYTE”，可能丢失数据
      1>GigeCameraDemoDlg.cpp(1145): warning C4101: “msg”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(1428): warning C4101: “s”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(1281): warning C4189: “bb”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(1452): warning C4101: “DeviceName”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(1969): warning C4189: “bNoGrab”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2092): warning C4189: “iValue”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2084): warning C4189: “iCameraCount”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2087): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2086): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2089): warning C4189: “pString”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2091): warning C4189: “bExist”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2162): warning C4189: “pDir”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2161): warning C4189: “iValue”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2157): warning C4189: “pConfigPath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2154): warning C4101: “chPath”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2156): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2155): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2158): warning C4189: “pString”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2160): warning C4189: “bExist”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2247): warning C4305: “=”: 从“double”到“float”截断
+     1>GigeCameraDemoDlg.cpp(1429): warning C4101: “s”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(1282): warning C4189: “bb”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(1453): warning C4101: “DeviceName”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(1970): warning C4189: “bNoGrab”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2093): warning C4189: “iValue”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2085): warning C4189: “iCameraCount”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2088): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2087): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2090): warning C4189: “pString”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2092): warning C4189: “bExist”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2163): warning C4189: “pDir”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2162): warning C4189: “iValue”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2158): warning C4189: “pConfigPath”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2155): warning C4101: “chPath”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2157): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2156): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2159): warning C4189: “pString”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2161): warning C4189: “bExist”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2248): warning C4305: “=”: 从“double”到“float”截断
-     1>GigeCameraDemoDlg.cpp(2256): warning C4101: “word”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2261): warning C4189: “n”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2257): warning C4101: “word_1”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2258): warning C4101: “word_2”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2416): warning C4189: “sendfrequency”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2562): warning C4101: “cx”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2562): warning C4101: “cy”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2249): warning C4305: “=”: 从“double”到“float”截断
+     1>GigeCameraDemoDlg.cpp(2257): warning C4101: “word”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2262): warning C4189: “n”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2258): warning C4101: “word_1”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2259): warning C4101: “word_2”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2417): warning C4189: “sendfrequency”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2563): warning C4101: “cx”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2563): warning C4101: “cy”: 未引用的局部变量
          InputDialog.cpp
          MessageDialog.cpp
      1>MessageDialog.cpp(49): warning C4100: “lparam”: 未引用的形参
@@ -77,16 +80,12 @@
          SplashWnd.cpp
          StdAfx.cpp
          Generating Code...
-     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(345): warning C4701: 使用了可能未初始化的局部变量“comstat”
-     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(368): warning C4706: 条件表达式内的赋值
-     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(600): warning C4701: 使用了可能未初始化的局部变量“RXBuff”
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo\serialport.cpp(345): warning C4701: 使用了可能未初始化的局部变量“comstat”
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo\serialport.cpp(368): warning C4706: 条件表达式内的赋值
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo\serialport.cpp(600): warning C4701: 使用了可能未初始化的局部变量“RXBuff”
        ResourceCompile:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _AFXDLL /D _DEBUG /D _VC80_UPGRADE=0x0710 /D _AFXDLL /l"0x0409" /I..\..\..\..\Classes\Gui /nologo /fo"Debug64\GigeCameraDemo.res" GigeCameraDemo.rc 
-     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(1)正在节点 3 上生成“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(2:3) (GetResolvedLinkLibs 个目标)。
-     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\Source\CorAPI\Win32\CorApi_2010.vcxproj' does not exist.
-     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\Basic\SapClassBasic_2010.vcxproj' does not exist.
-     2>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(GetResolvedLinkLibs 个目标)的操作。
-     1>Link:
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Debug64\GigeCameraDemo.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64\VS2010" /LIBPATH:"C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64" SapClassBasic.lib SapClassGuiD.lib ZLBImage.lib ZLBCommon.lib /MANIFEST /ManifestFile:"Debug64\GigeCameraDemo.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug64\GigeCameraDemo.pdb" /MAP /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug64\GigeCameraDemo.lib" /MACHINE:X64 Debug64\GigeCameraDemo.res
          .\Debug64\GigeCameraDemo.obj
          .\Debug64\GigeCameraDemoDlg.obj
@@ -95,15 +94,14 @@
          .\Debug64\SerialPort.obj
          .\Debug64\SplashWnd.obj
          .\Debug64\StdAfx.obj
-         LINK : 没有找到 Debug64\GigeCameraDemo.exe 或上一个增量链接没有生成它；正在执行完全链接
-         GigeCameraDemo_2010.vcxproj -> C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\Debug64\GigeCameraDemo.exe
+         GigeCameraDemo_2010.vcxproj -> C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo\Debug64\GigeCameraDemo.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\Debug64\GigeCameraDemo.exe.manifest" /manifest Debug64\GigeCameraDemo.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo\Debug64\GigeCameraDemo.exe.manifest" /manifest Debug64\GigeCameraDemo.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
        FinalizeBuildStatus:
          正在删除文件“Debug64\GigeCameraDemo.unsuccessfulbuild”。
          正在对“Debug64\GigeCameraDemo.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(rebuild 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:08.05
+已用时间 00:00:09.50
