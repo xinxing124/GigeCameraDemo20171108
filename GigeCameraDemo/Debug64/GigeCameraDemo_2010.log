@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/4/9 11:01:08。
+﻿生成启动时间为 2018/4/9 11:26:25。
      1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug64\GigeCameraDemo.lastbuildstate”。
@@ -104,4 +104,4 @@
 
 生成成功。
 
-已用时间 00:00:09.50
+已用时间 00:00:09.25

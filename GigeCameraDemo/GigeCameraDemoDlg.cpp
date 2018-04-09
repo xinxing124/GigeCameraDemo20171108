@@ -2727,9 +2727,11 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 	if(m_iWindowMode!=1)return;
 
 	if(m_RectExitShow.PtInRect(point)){
-		//m_iExitCount=(m_iExitCount>1?0:m_iExitCount+1);
-		//if(m_iExitCount==1)
-		//{
+		//m_iExitCount=(m_iExitCount>1?1:m_iExitCount+1);
+		m_iExitCount++;
+		if(m_iExitCount>2)
+		{
+			m_iExitCount=0;
 			m_iWindowMode=2;
 			// 显示TitleBar
 			ModifyStyle(0, WS_CAPTION, SWP_FRAMECHANGED);
@@ -2754,7 +2756,7 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 			GetDlgItem(IDC_TEST)->ShowWindow(SW_SHOW);
 			GetDlgItem(IDC_RETURN)->ShowWindow(SW_SHOW);
 			ShowWindow(SW_NORMAL);
-		//}
+		}
 	}else if(m_RectWholeMileageButton.PtInRect(point)){//整里程校正
 		m_iDotInfo=1;
 		WritePosInfo(m_iDotInfo);
