@@ -1,6 +1,6 @@
  GigeCameraDemo
 
- Timestamp is 5acadd6a (Mon Apr 09 11:26:34 2018)
+ Timestamp is 5acb09bc (Mon Apr 09 14:35:40 2018)
 
  Preferred load address is 0000000140000000
 
@@ -40,7 +40,7 @@
  0005:000025f0 000024b0H .idata$5                DATA
  0005:00004aa0 00004997H .idata$6                DATA
  0006:00000000 00001253H .rsrc$01                DATA
- 0006:00001260 000b7f06H .rsrc$02                DATA
+ 0006:00001260 000ca613H .rsrc$02                DATA
 
   Address         Publics by Value              Rva+Base               Lib:Object
 
