@@ -1073,14 +1073,14 @@ LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
 	{
 	case 1:
 		RBufOne[RPosOne++]=(UINT)wParam;
-		if(RPosOne>13){
+		if(RPosOne>12){
 			for(int i=3,j=0;i<11;j++,i+=2)
 				revint16[j] =RBufOne[i] * 256+ RBufOne[i + 1];
 			iTemp=(int)(revint16[0]/100.0);
 			m_dbVoltage_1=iTemp/10.0;
 			//iTemp=(int)(revint16[1]/100.0);
 			//pThis->m_dbSpeed =iTemp/10.0;
-			iTemp=(int)(revint16[2]/100.0);
+			iTemp=(int)(revint16[1]/100.0);
 			m_dbVoltage_2 =iTemp/10.0;
 			RPosOne=0;
 		}
@@ -1196,8 +1196,9 @@ if (::PeekMessage(&msg,NULL,0,0,PM_NOREMOVE))
 ::PostQuitMessage(0);
 return;
  }
+ }
  	nowTime=clock();
-}
+
 } while ((nowTime-start)<msecond);
 } 
 //***********************************************************************************
@@ -1235,11 +1236,38 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);	// Set small icon
 	SetIcon(m_hIcon, TRUE);		// Set big icon
 
+	//::SetWindowPos(this->m_hWnd,HWND_TOPMOST,0,0,0,0,SWP_NOSIZE|SWP_NOMOVE);
+	// 隐藏TitleBar
+	//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED);
+	DWORD dwStyle = GetStyle();//获取旧样式  
+	DWORD dwNewStyle = WS_OVERLAPPED | WS_VISIBLE| WS_SYSMENU |WS_MINIMIZEBOX|WS_MAXIMIZEBOX|WS_CLIPCHILDREN|WS_CLIPSIBLINGS;  
+	dwNewStyle&=dwStyle;//按位与将旧样式加上 
+	SetWindowLong(m_hWnd,GWL_STYLE,dwNewStyle);//设置成新的样式  
+
+	//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
+	//ModifyStyle(WS_CAPTION,0,0);//如果不想去掉标题栏，去掉该句。
+	//SendMessage(WM_SYSCOMMAND,SC_MAXIMIZE,0);
+	//
+	//SetWindowPos(GetDlgItem(IDC_VIEW_WND3),0,0, 1024,768,SWP_NOMOVE|SWP_NOSIZE);
+	GetDlgItem(IDC_VIEW_WND3)->MoveWindow(0,0,1024,768);
+	GetDlgItem(IDC_VIEW_WND3)->ShowWindow(SW_SHOW);
+	this->ShowWindow(SW_SHOWMAXIMIZED);
+	m_ImageWnd_1.ShowWindow(SW_HIDE);
+	m_ImageWnd_2.ShowWindow(SW_HIDE);
+	m_statusWnd.ShowWindow(SW_HIDE);
+	GetDlgItem(IDC_GRAB)->ShowWindow(SW_HIDE);
+	GetDlgItem(IDC_FREEZE)->ShowWindow(SW_HIDE);
+	GetDlgItem(IDC_TEST)->ShowWindow(SW_HIDE);
+	GetDlgItem(IDC_RETURN)->ShowWindow(SW_HIDE);
+	
+	SetUI();
+	RefreshUI ();
+
 	//if(m_SerialPort.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
 	//{
 	//	m_SerialPort.StartMonitoring();
 	//}
-	
+
 	if(m_SerialPortOne.InitPort(this,1,9600,'N',8,1,EV_RXCHAR|EV_CTS,512))
 	{
 		m_SerialPortOne.StartMonitoring();
@@ -1342,8 +1370,8 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	{
 		if (SapManager::GetServerCount()<3)
 		{
-			//delay_time(2000);
-			Sleep(2000);
+			delay_time(2000);
+			//Sleep(2000);
 			//CheckMessageQueue();
 		}
 		else
@@ -1356,7 +1384,7 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 			//	m_strInfo=temp;
 			//	InvalidateRect(&m_RectInfoShow);
 			//}
-			m_pSplashWindow->SetInfo(temp);
+			//m_pSplashWindow->SetInfo(temp);
 			break;
 		}
 	}
@@ -1371,31 +1399,21 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 		//	m_strInfo=temp;
 		//	InvalidateRect(&m_RectInfoShow);
 		//}
-		m_pSplashWindow->SetInfo(temp);
+		//m_pSplashWindow->SetInfo(temp);
 		::MessageBox(NULL,_T("No camera found or lack of camera"),_T("Message"),MB_ICONHAND);
 		EndDialog(TRUE);
 		return FALSE;
 	}
-
+	if(m_iFirstFlag!=1)
+	{
+		//m_pSplashWindow->DeleteSplash();
+		m_iFirstFlag=1;
+		//m_pSplashWindow->DestroyWindow();
+		//RefreshUI();
+	}
 		SetTimer(3,1000,NULL);
 
 	m_iWindowMode=1;
-	// 隐藏TitleBar
-	ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED);
-	//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
-	//ModifyStyle(WS_CAPTION,0,0);//如果不想去掉标题栏，去掉该句。
-	//SendMessage(WM_SYSCOMMAND,SC_MAXIMIZE,0);
-	ShowWindow(SW_SHOWMAXIMIZED);
-	m_ImageWnd_1.ShowWindow(SW_HIDE);
-	m_ImageWnd_2.ShowWindow(SW_HIDE);
-	m_statusWnd.ShowWindow(SW_HIDE);
-	GetDlgItem(IDC_GRAB)->ShowWindow(SW_HIDE);
-	GetDlgItem(IDC_FREEZE)->ShowWindow(SW_HIDE);
-	GetDlgItem(IDC_TEST)->ShowWindow(SW_HIDE);
-	GetDlgItem(IDC_RETURN)->ShowWindow(SW_HIDE);
-	GetDlgItem(IDC_VIEW_WND3)->MoveWindow(0,0,1024,768);
-	GetDlgItem(IDC_VIEW_WND3)->ShowWindow(SW_SHOW);
-	SetUI();
 
 #if 1
 	// Define objects
@@ -1794,9 +1812,12 @@ void CGigeCameraDemoDlg::OnPaint()
 	{
 		CDialog::OnPaint();
 	}
-	m_pSplashWindow->DeleteSplash();
-	m_iFirstFlag=1;
-	RefreshUI();
+	//if(m_iFirstFlag!=1)
+	//{
+		//m_pSplashWindow->DeleteSplash();
+		m_iFirstFlag=1;
+		RefreshUI();
+	//}
 }
 
 void CGigeCameraDemoDlg::OnDestroy() 
@@ -1838,6 +1859,7 @@ void CGigeCameraDemoDlg::OnDestroy()
 	{
 		m_strInfo=temp;
 		InvalidateRect(&m_RectInfoShow);
+		//m_pSplashWindow->SetInfo(temp);
 	}
 }
 
@@ -2105,7 +2127,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 		CString temp;
 		temp.Format("#The drive does not exist,Reboot...$\r\n");
 		//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
-		m_pSplashWindow->SetInfo(temp);
+		//m_pSplashWindow->SetInfo(temp);
 		this->MessageBox("The drive does not exist,Reboot...","error");
 		exit(0);
 	}
@@ -2390,10 +2412,10 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 		}
 	
 		byte sendvoltage[] = {0x01,0x03,0x02,0x58,0x00,0x04,0xC4,0x62};
-		byte sendfrequency[]={0x02,0x03,0x00,0x22,0x00,0x01,0x24,0x33};
+		//byte sendfrequency[]={0x02,0x03,0x00,0x22,0x00,0x01,0x24,0x33};
+		byte sendfrequency[]={0x01,0x03,0x00,0x00,0x00,0x08,0x44,0x0C};
 		m_SerialPortOne.WriteToPort((char*)sendvoltage,8);
-		m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
-
+		//m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
 	}
 	if(nIDEvent==2)
 	{
@@ -2585,8 +2607,8 @@ else
 image.Draw(pMemDc->m_hDC, m_RectAddMileageShow);//将图片绘制到picture表示的区域内 
 image.Detach();
 
-m_dbVoltage_1=55.0;
-m_dbVoltage_2=55.0;
+//m_dbVoltage_1=55.0;
+//m_dbVoltage_2=55.0;
 if(m_dbVoltage_1>=52.0)
 {
 	ImageFrom_IDResource(IDB_PNG51,"PNG",&image);
@@ -2710,6 +2732,12 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 			m_iWindowMode=2;
 			// 显示TitleBar
 			ModifyStyle(0, WS_CAPTION, SWP_FRAMECHANGED);
+			//DWORD dwExStyle = GetExStyle();//获取旧扩展样式  
+			//DWORD dwNewExStyle = WS_EX_LEFT |WS_EX_LTRREADING |WS_EX_RIGHTSCROLLBAR;  
+			//dwNewExStyle&=dwExStyle;//按位与将旧扩展样式加上 
+			//SetWindowLong(m_hWnd,GWL_EXSTYLE,dwNewExStyle);//设置新的扩展样式   
+			//SetWindowPos(NULL,0,0,0,0,SWP_NOZORDER|SWP_NOMOVE|SWP_NOSIZE|SWP_FRAMECHANGED);//窗口位置和大小保持原来不变！
+
 			//ModifyStyle(WS_CAPTION,0,1);//如果不想去掉标题栏，去掉该句。
 			//删除标题栏风格 
 			//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
@@ -2919,7 +2947,14 @@ int CGigeCameraDemoDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (__super::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	m_pSplashWindow= new CSplashWnd();
-    m_pSplashWindow->CreateSplash(); 
+	//m_pSplashWindow= new CSplashWnd();
+    //m_pSplashWindow->CreateSplash(); 
+	//HideCursor();
 	return 0;
+}
+
+void CGigeCameraDemoDlg::HideCursor()//隐藏光标
+{
+ CONSOLE_CURSOR_INFO cursor_info = {1, 0}; 
+ SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
 }

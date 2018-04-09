@@ -1,0 +1,103 @@
+﻿生成启动时间为 4/4/2018 5:08:16 PM。
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”在节点 3 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug64.NET_2010\SapClassGui.lastbuildstate”。
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\Source\CorAPI\Win32\CorApi_2010.vcxproj' does not exist.
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\Basic\SapClassBasic_2010.vcxproj' does not exist.
+       InitializeBuildStatus:
+         正在创建“Debug64.NET_2010\SapClassGui.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       PreBuildEvent:
+         if exist %SystemRoot%\SysWOW64 goto end
+         echo (Sapera LT warning) Compiling a 64-bit configuration under 32-bit Windows
+         :end
+         
+         :VCEnd
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I..\Basic /I..\..\Include /I..\..\externals\CorLib /Zi /nologo /W4 /WX- /Od /D _DEBUG /D WIN32 /D _WINDOWS /D _AFXEXT /D SAPCLASSGUI /D WINVER=0x0501 /D _WIN32_WINNT=0x0501 /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _AFXDLL /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"SapClassGui.h" /Fp".\Debug64.NET_2010\SapClassGui.pch" /Fo".\Debug64.NET_2010\\" /Fd".\Debug64.NET_2010\vc100.pdb" /Gd /TP /errorReport:prompt SapClassGui.cpp
+         SapClassGui.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I..\Basic /I..\..\Include /I..\..\externals\CorLib /Zi /nologo /W4 /WX- /Od /D _DEBUG /D WIN32 /D _WINDOWS /D _AFXEXT /D SAPCLASSGUI /D WINVER=0x0501 /D _WIN32_WINNT=0x0501 /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _AFXDLL /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"SapClassGui.h" /Fp".\Debug64.NET_2010\SapClassGui.pch" /Fo".\Debug64.NET_2010\\" /Fd".\Debug64.NET_2010\vc100.pdb" /Gd /TP /errorReport:prompt AbortDlg.cpp AcqConfigDlg.cpp AcqDlg.cpp AScanDlg.cpp AviFileDlg.cpp BayerDlg.cpp BrowseDirDlg.cpp BufDlg.cpp ColorConversionDlg.cpp CompDlg.cpp FlatFieldDlg.cpp GioBidirectionalDlg.cpp GioInputDlg.cpp GioOutputDlg.cpp ImageExWnd.cpp ImageFilterEditorDlg.cpp ImageViewportWnd.cpp ImageWnd.cpp JpegFileDlg.cpp LoadSaveDlg.cpp LScanDlg.cpp RawFileDlg.cpp TiffFileDlg.cpp ViewDlg.cpp
+         AbortDlg.cpp
+         AcqConfigDlg.cpp
+         AcqDlg.cpp
+         AScanDlg.cpp
+         AviFileDlg.cpp
+         BayerDlg.cpp
+         BrowseDirDlg.cpp
+         BufDlg.cpp
+         ColorConversionDlg.cpp
+         CompDlg.cpp
+         FlatFieldDlg.cpp
+         GioBidirectionalDlg.cpp
+         GioInputDlg.cpp
+         GioOutputDlg.cpp
+         ImageExWnd.cpp
+         ImageFilterEditorDlg.cpp
+         ImageViewportWnd.cpp
+         ImageWnd.cpp
+         JpegFileDlg.cpp
+         LoadSaveDlg.cpp
+         Generating Code...
+         Compiling...
+         LScanDlg.cpp
+         RawFileDlg.cpp
+         TiffFileDlg.cpp
+         ViewDlg.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _AFXDLL /D _DEBUG /D _VC80_UPGRADE=0x0710 /D _AFXDLL /l"0x0409" /nologo /fo"Debug64.NET_2010\SapClassGui.res" SapClassGui.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Debug64.NET_2010\SapClassGui82D.NET_2010.dll" /INCREMENTAL:NO /NOLOGO ..\..\Lib\Win64\Corapi.lib ..\..\Lib\Win64\SapClassBasic.lib /MANIFEST /ManifestFile:"Debug64.NET_2010\SapClassGui82D.NET_2010.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug64.NET_2010\SapClassGui82D.pdb" /MAP /SUBSYSTEM:WINDOWS /TLBID:1 /BASE:"0x67d80000" /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug64.NET_2010\SapClassGuiD.lib" /MACHINE:X64 /DLL Debug64.NET_2010\SapClassGui.res
+         .\Debug64.NET_2010\AbortDlg.obj
+         .\Debug64.NET_2010\AcqConfigDlg.obj
+         .\Debug64.NET_2010\AcqDlg.obj
+         .\Debug64.NET_2010\AScanDlg.obj
+         .\Debug64.NET_2010\AviFileDlg.obj
+         .\Debug64.NET_2010\BayerDlg.obj
+         .\Debug64.NET_2010\BrowseDirDlg.obj
+         .\Debug64.NET_2010\BufDlg.obj
+         .\Debug64.NET_2010\ColorConversionDlg.obj
+         .\Debug64.NET_2010\CompDlg.obj
+         .\Debug64.NET_2010\FlatFieldDlg.obj
+         .\Debug64.NET_2010\GioBidirectionalDlg.obj
+         .\Debug64.NET_2010\GioInputDlg.obj
+         .\Debug64.NET_2010\GioOutputDlg.obj
+         .\Debug64.NET_2010\ImageExWnd.obj
+         .\Debug64.NET_2010\ImageFilterEditorDlg.obj
+         .\Debug64.NET_2010\ImageViewportWnd.obj
+         .\Debug64.NET_2010\ImageWnd.obj
+         .\Debug64.NET_2010\JpegFileDlg.obj
+         .\Debug64.NET_2010\LoadSaveDlg.obj
+         .\Debug64.NET_2010\LScanDlg.obj
+         .\Debug64.NET_2010\RawFileDlg.obj
+         .\Debug64.NET_2010\SapClassGui.obj
+         .\Debug64.NET_2010\TiffFileDlg.obj
+         .\Debug64.NET_2010\ViewDlg.obj
+            正在创建库 Debug64.NET_2010\SapClassGuiD.lib 和对象 Debug64.NET_2010\SapClassGuiD.exp
+         SapClassGui_2010.vcxproj -> C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\Debug64.NET_2010\SapClassGui82D.NET_2010.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Debug64.NET_2010\SapClassGui82D.NET_2010.dll;#2" /manifest Debug64.NET_2010\SapClassGui82D.NET_2010.dll.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       PostBuildEvent:
+         if not exist %SystemRoot%\SysWOW64 goto is32bit
+         echo Updating System32 directory (this does not work for Windows XP 64-bit, for which you must manually copy to System32)
+         copy "C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\Debug64.NET_2010\SapClassGui82D.NET_2010.dll" %SystemRoot%\Sysnative
+         goto end
+         :is32bit
+         echo Not updating System32 directory (64-bit binary file on 32-bit Windows)
+         :end
+         echo Updating Sapera library directory
+         copy Debug64.NET_2010\SapClassGuiD.lib ..\..\Lib\.NET_2010
+         copy Debug64.NET_2010\SapClassGuiD.lib ..\..\Lib\Win64\VS2010
+         :VCEnd
+         Updating System32 directory (this does not work for Windows XP 64-bit, for which you must manually copy to System32)
+         已复制         1 个文件。
+         Updating Sapera library directory
+         已复制         1 个文件。
+         已复制         1 个文件。
+       FinalizeBuildStatus:
+         正在删除文件“Debug64.NET_2010\SapClassGui.unsuccessfulbuild”。
+         正在对“Debug64.NET_2010\SapClassGui.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.46

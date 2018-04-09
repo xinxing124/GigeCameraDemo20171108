@@ -1,0 +1,24 @@
+﻿生成启动时间为 4/4/2018 5:07:33 PM。
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug.NET_2010\SapClassGui.lastbuildstate”。
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\Source\CorAPI\Win32\CorApi_2010.vcxproj' does not exist.
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\Basic\SapClassBasic_2010.vcxproj' does not exist.
+       InitializeBuildStatus:
+         正在对“Debug.NET_2010\SapClassGui.unsuccessfulbuild”执行 Touch 任务。
+       PreBuildEvent:
+         if not exist %SystemRoot%\SysWOW64 goto end
+         echo (Sapera LT warning) Compiling a 32-bit configuration under 64-bit Windows
+         :end
+         
+         :VCEnd
+         (Sapera LT warning) Compiling a 32-bit configuration under 64-bit Windows
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\Basic /I..\..\Include /I..\..\externals\CorLib /Zi /nologo /W4 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D _AFXEXT /D SAPCLASSGUI /D WINVER=0x0501 /D _WIN32_WINNT=0x0501 /D _VC80_UPGRADE=0x0710 /D _WINDLL /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"SapClassGui.h" /Fp".\Debug.NET_2010\SapClassGui.pch" /Fo".\Debug.NET_2010\\" /Fd".\Debug.NET_2010\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SapClassGui.cpp
+         SapClassGui.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\atlmfc\include\afxver_.h(81): fatal error C1189: #error :  Please use the /MD switch for _AFXDLL builds
+     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.33

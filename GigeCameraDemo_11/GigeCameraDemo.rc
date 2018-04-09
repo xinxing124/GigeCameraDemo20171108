@@ -1,0 +1,344 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "MainItem"
+    BEGIN
+        MENUITEM "&Show",                       ID_MAINITEM_SHOW
+        MENUITEM "&Hide",                       ID_MAINITEM_HIDE
+        MENUITEM SEPARATOR
+        MENUITEM "&Test",                       ID_MAINITEM_TEST
+        MENUITEM "&Exit",                       ID_MAINITEM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INPUT_DIALOG DIALOGEX 0, 0, 203, 64
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,87,43,50,14
+    PUSHBUTTON      "取消",IDCANCEL,146,43,50,14
+    LTEXT           "输入测试时间",IDC_STATIC,7,17,54,13
+    LTEXT           "分钟",IDC_STATIC,111,18,17,8
+    EDITTEXT        IDC_TIME_EDIT,57,14,50,16,ES_AUTOHSCROLL
+END
+
+IDD_MESSAGE_DIALOG DIALOGEX 0, 0, 1024, 788
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,124,179,50,14
+    PUSHBUTTON      "取消",IDCANCEL,967,767,50,14
+    LTEXT           "Static",IDC_STATIC_1,138,126,193,21
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_INPUT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 57
+    END
+
+    IDD_MESSAGE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 1017
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 781
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_PNG1                PNG                     "Res\\0000.png"
+IDB_PNG2                PNG                     "Res\\0001.png"
+IDB_PNG3                PNG                     "Res\\0010.png"
+IDB_PNG4                PNG                     "Res\\0011.png"
+IDB_PNG5                PNG                     "Res\\0020.png"
+IDB_PNG6                PNG                     "Res\\0021.png"
+IDB_PNG7                PNG                     "Res\\0030.png"
+IDB_PNG8                PNG                     "Res\\0031.png"
+IDB_PNG9                PNG                     "Res\\0040.png"
+IDB_PNG10               PNG                     "Res\\0041.png"
+IDB_PNG11               PNG                     "Res\\0050.png"
+IDB_PNG12               PNG                     "Res\\0051.png"
+IDB_PNG13               PNG                     "Res\\0060.png"
+IDB_PNG14               PNG                     "Res\\0061.png"
+IDB_PNG15               PNG                     "Res\\0070.png"
+IDB_PNG16               PNG                     "Res\\0071.png"
+IDB_PNG17               PNG                     "Res\\0080.png"
+IDB_PNG18               PNG                     "Res\\0081.png"
+IDB_PNG19               PNG                     "Res\\0090.png"
+IDB_PNG20               PNG                     "Res\\0091.png"
+IDB_PNG21               PNG                     "Res\\0100.png"
+IDB_PNG22               PNG                     "Res\\0101.png"
+IDB_PNG23               PNG                     "Res\\0110.png"
+IDB_PNG24               PNG                     "Res\\0111.png"
+IDB_PNG25               PNG                     "Res\\0120.png"
+IDB_PNG26               PNG                     "Res\\0121.png"
+IDB_PNG27               PNG                     "Res\\0130.png"
+IDB_PNG28               PNG                     "Res\\0131.png"
+IDB_PNG29               PNG                     "Res\\0140.png"
+IDB_PNG30               PNG                     "Res\\0141.png"
+IDB_PNG31               PNG                     "Res\\0150.png"
+IDB_PNG32               PNG                     "Res\\0151.png"
+IDB_PNG33               PNG                     "Res\\0160.png"
+IDB_PNG34               PNG                     "Res\\0161.png"
+IDB_PNG35               PNG                     "Res\\0170.png"
+IDB_PNG36               PNG                     "Res\\0171.png"
+IDB_PNG37               PNG                     "Res\\0180.png"
+IDB_PNG38               PNG                     "Res\\0181.png"
+IDB_PNG39               PNG                     "Res\\0190.png"
+IDB_PNG40               PNG                     "Res\\0191.png"
+IDB_PNG41               PNG                     "Res\\0200.png"
+IDB_PNG42               PNG                     "Res\\0201.png"
+IDB_PNG43               PNG                     "Res\\0210.png"
+IDB_PNG44               PNG                     "Res\\0211.png"
+IDB_PNG45               PNG                     "Res\\0220.png"
+IDB_PNG46               PNG                     "Res\\0221.png"
+IDB_PNG47               PNG                     "Res\\0230.png"
+IDB_PNG48               PNG                     "Res\\0240.png"
+IDB_PNG49               PNG                     "Res\\0250.png"
+IDB_PNG50               PNG                     "Res\\0260.png"
+IDB_PNG51               PNG                     "Res\\0270.png"
+IDB_PNG52               PNG                     "Res\\0271.png"
+IDB_PNG53               PNG                     "Res\\0272.png"
+IDB_PNG54               PNG                     "Res\\0273.png"
+IDB_PNG55               PNG                     "Res\\0274.png"
+IDB_PNG56               PNG                     "Res\\0275.png"
+IDB_PNG57               PNG                     "Res\\1000.png"
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 192, 54
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,23
+    LTEXT           "Camera Version 8.10",IDC_STATIC,40,10,106,8,SS_NOPREFIX
+    LTEXT           "Copyright (c)  2016-2026",IDC_STATIC,40,25,116,17
+    DEFPUSHBUTTON   "OK",IDOK,153,7,32,14,WS_GROUP
+END
+
+IDD_GIGECAMERADEMO_DIALOG DIALOGEX 0, 0, 678, 428
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GIGE Camera"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_VIEW_WND1,"Static",SS_BLACKRECT,0,0,338,408
+    PUSHBUTTON      "&Config",IDC_TEST,617,411,28,14
+    LTEXT           "",IDC_STATUS,1,411,551,14,SS_CENTERIMAGE | SS_SUNKEN
+    CONTROL         "",IDC_VIEW_WND2,"Static",SS_BLACKRECT,339,0,338,408
+    PUSHBUTTON      "&Freeze",IDC_FREEZE,586,411,28,14
+    PUSHBUTTON      "&Grab",IDC_GRAB,555,411,28,14
+    PUSHBUTTON      "&Return",IDC_RETURN,649,411,28,14
+    CONTROL         "",IDC_VIEW_WND3,"Static",SS_WHITEFRAME,336,4,4,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+
+    IDD_GIGECAMERADEMO_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 426
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\GigeCameraDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GigeCameraDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,10,0,0
+ PRODUCTVERSION 8,10,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "GIGE Camera"
+            VALUE "FileVersion", "8.10"
+            VALUE "InternalName", "Camera"
+            VALUE "LegalCopyright", "Copyright (c)  2016-2026"
+            VALUE "OriginalFilename", "Camera.exe"
+            VALUE "ProductName", "Camera"
+            VALUE "ProductVersion", "8.10"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About..."
+END
+
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\GigeCameraDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

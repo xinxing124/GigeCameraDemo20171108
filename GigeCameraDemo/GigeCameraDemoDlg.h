@@ -132,7 +132,7 @@ public:
 	afx_msg void OnCbnSelchangeComboBayer();
 
 public:
-	CSplashWnd *m_pSplashWindow;
+	//CSplashWnd *m_pSplashWindow;
 	CMessageDialog *pMessageDialog;
 	//CSerialPort m_SerialPort;
 	CSerialPort m_SerialPortOne;
@@ -264,6 +264,7 @@ public:
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	void WritePosInfo(int Value);
 	void SetUI(void);
+	void HideCursor();
 	int m_iFirstFlag;
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 };
