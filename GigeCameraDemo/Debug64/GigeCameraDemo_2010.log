@@ -1,4 +1,4 @@
-﻿生成启动时间为 5/23/2018 3:27:00 PM。
+﻿生成启动时间为 5/23/2018 4:22:39 PM。
      1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug64\GigeCameraDemo.lastbuildstate”。
@@ -45,23 +45,23 @@
      1>GigeCameraDemoDlg.cpp(2100): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2103): warning C4189: “pString”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2105): warning C4189: “bExist”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2182): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>GigeCameraDemoDlg.cpp(2182): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
      1>GigeCameraDemoDlg.cpp(2177): warning C4189: “pDir”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2176): warning C4189: “iValue”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2172): warning C4189: “pConfigPath”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2169): warning C4101: “chPath”: 未引用的局部变量
      1>GigeCameraDemoDlg.cpp(2171): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2170): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2173): warning C4189: “pString”: 局部变量已初始化但不引用
      1>GigeCameraDemoDlg.cpp(2175): warning C4189: “bExist”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2262): warning C4305: “=”: 从“double”到“float”截断
      1>GigeCameraDemoDlg.cpp(2263): warning C4305: “=”: 从“double”到“float”截断
-     1>GigeCameraDemoDlg.cpp(2271): warning C4101: “word”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2276): warning C4189: “n”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2272): warning C4101: “word_1”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2273): warning C4101: “word_2”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2432): warning C4189: “sendfrequency”: 局部变量已初始化但不引用
-     1>GigeCameraDemoDlg.cpp(2578): warning C4101: “cx”: 未引用的局部变量
-     1>GigeCameraDemoDlg.cpp(2578): warning C4101: “cy”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2264): warning C4305: “=”: 从“double”到“float”截断
+     1>GigeCameraDemoDlg.cpp(2272): warning C4101: “word”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2277): warning C4189: “n”: 局部变量已初始化但不引用
+     1>GigeCameraDemoDlg.cpp(2273): warning C4101: “word_1”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2274): warning C4101: “word_2”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2580): warning C4101: “cx”: 未引用的局部变量
+     1>GigeCameraDemoDlg.cpp(2580): warning C4101: “cy”: 未引用的局部变量
          InputDialog.cpp
          MessageDialog.cpp
      1>MessageDialog.cpp(49): warning C4100: “lparam”: 未引用的形参
@@ -107,4 +107,4 @@
 
 生成成功。
 
-已用时间 00:00:06.78
+已用时间 00:00:06.87

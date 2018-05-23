@@ -1102,7 +1102,7 @@ LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
 				rint32[n] =(RBufTwo[m]<<24)+(RBufTwo[m+1]<<16)+(RBufTwo[m+2]<<8)+RBufTwo[m+3];
 			m_dbSpeed=rint32[5]/100.0*60.0*m_XiShu[1]/1000.0;
 			//m_dbCurrMileage=rint32[0]*0.3/1024.0/1000.0;
-			m_dbCurrMileage=rint32[0]*m_XiShu[3]/1000.0;//0.3/1024
+			m_dbCurrMileage=m_dbLastMileage+rint32[0]*m_XiShu[3]/1000.0;//0.3/1024
 			//iTemp=(int)(rint32[4]+rint32[5]);
 			//m_dbSpeed =iTemp/1.0;
 			RPosTwo=0;
@@ -2128,7 +2128,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	m_XiShu[1]= ZLBIniReadDouble("Basic","SpeedParam",1.0,m_iniHandle);
 	//m_XiShu[2]= ZLBIniReadDouble("Basic","VoltageParam_2",0.0,m_iniHandle);
 	m_XiShu[3]= ZLBIniReadDouble("Basic","MileageParam",1.0,m_iniHandle);//X*0.3/1024
-
+	m_dbLastMileage= ZLBIniReadDouble("Basic","LastMileage",1.0,m_iniHandle);//X*0.3/1024
 	//判断目录是否存在,如果不存在就创建目录
 	//CString strDirvePath=m_strStoragePath.Left(2);
 	//GetDriveType(strDirvePath);
@@ -2175,13 +2175,14 @@ bool CGigeCameraDemoDlg::WriteParamFileIniFile()
     bool bExist = false;
 	int  iValue = -1;
 	char *pDir = NULL;
-	//strIni.Format("%s","MainFrame.ini");
+	strIni.Format("%s","Config.ini");
 
-	//pConfigPath =ZLBGetCurrentPath();
-	//memset(chPath,0x00,512);
-	//sprintf(chPath,"%s\\%s",pConfigPath,strIni.GetBuffer(0));
-	//m_iniHandle = ZLBIniFile(m_strSoftWareInfName.GetBuffer());  
+	pConfigPath =ZLBGetCurrentPath();
+	memset(chPath,0x00,512);
+	sprintf(chPath,"%s\\%s",pConfigPath,strIni.GetBuffer(0));
+	m_iniHandle = ZLBIniFile(chPath);  
 
+	ZLBIniWriteDouble("Basic","LastMileage",m_dbLastMileage,m_iniHandle);
 	//ZLBIniWriteInt("相机配置","是否开启存储图像(1-开启 0-关闭)",m_iStartImage,m_iniHandle);
 	//ZLBIniWriteInt("相机配置","存储图像总的张数",m_iSaveImageCount,m_iniHandle);
 	//ZLBIniWriteString("相机配置","存储图像的目录",m_strStoragePath.GetBuffer(0),m_iniHandle);
@@ -2432,6 +2433,7 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 		byte sendfrequency[]={0x01,0x03,0x00,0x70,0x00,0x10,0x45,0xDD};
 		m_SerialPortOne.WriteToPort((char*)sendvoltage,8);
 		m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
+		WriteParamFileIniFile();
 	}
 	if(nIDEvent==2)
 	{
