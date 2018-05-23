@@ -1,0 +1,112 @@
+﻿生成启动时间为 5/23/2018 3:00:50 PM。
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\GigeCameraDemo.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       PreBuildEvent:
+         if not exist %SystemRoot%\SysWOW64 goto end
+         echo (Sapera LT warning) Compiling a 32-bit configuration under 64-bit Windows
+         :end
+         
+         :VCEnd
+         (Sapera LT warning) Compiling a 32-bit configuration under 64-bit Windows
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\..\..\..\include /I..\..\..\..\Classes\Basic /I..\..\..\..\Classes\Gui /I..\..\..\..\externals\CorLib /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D WINVER=0x0501 /D _WIN32_WINNT=0x0501 /D _VC80_UPGRADE=0x0710 /D _AFXDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GigeCameraDemo.cpp GigeCameraDemoDlg.cpp InputDialog.cpp MessageDialog.cpp SerialPort.cpp SplashWnd.cpp StdAfx.cpp
+         GigeCameraDemo.cpp
+         GigeCameraDemoDlg.cpp
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(445): warning C4189: “pDlg”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(619): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(592): warning C4101: “time”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(765): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(734): warning C4101: “time”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(888): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(888): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(891): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(852): warning C4101: “iCounter”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(857): warning C4101: “ch_tmp”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(949): warning C4995: “sprintf”: 名称被标记为 #pragma deprecated
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(949): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(952): warning C4244: “=”: 从“time_t”转换到“double”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(909): warning C4101: “iCounter”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1048): warning C4189: “hFile”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1078): warning C4244: “=”: 从“UINT”转换到“BYTE”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1092): warning C4244: “=”: 从“UINT”转换到“BYTE”，可能丢失数据
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1158): warning C4101: “msg”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1442): warning C4101: “s”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1295): warning C4189: “bb”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1466): warning C4101: “DeviceName”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(1983): warning C4189: “bNoGrab”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2106): warning C4189: “iValue”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2098): warning C4189: “iCameraCount”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2101): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2100): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2103): warning C4189: “pString”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2105): warning C4189: “bExist”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2176): warning C4189: “pDir”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2175): warning C4189: “iValue”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2171): warning C4189: “pConfigPath”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2168): warning C4101: “chPath”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2170): warning C4189: “pRecordSavePath”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2169): warning C4189: “pImageSavePath”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2172): warning C4189: “pString”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2174): warning C4189: “bExist”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2261): warning C4305: “=”: 从“double”到“float”截断
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2262): warning C4305: “=”: 从“double”到“float”截断
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2270): warning C4101: “word”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2275): warning C4189: “n”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2271): warning C4101: “word_1”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2272): warning C4101: “word_2”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2431): warning C4189: “sendfrequency”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2577): warning C4101: “cx”: 未引用的局部变量
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\gigecamerademodlg.cpp(2577): warning C4101: “cy”: 未引用的局部变量
+         InputDialog.cpp
+         MessageDialog.cpp
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\messagedialog.cpp(49): warning C4100: “lparam”: 未引用的形参
+         SerialPort.cpp
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(133): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(134): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(118): warning C4189: “bResult”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(216): warning C4189: “BytesTransfered”: 局部变量已初始化但不引用
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(415): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(613): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+         SplashWnd.cpp
+         StdAfx.cpp
+         正在生成代码...
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(345): warning C4701: 使用了可能未初始化的局部变量“comstat”
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(368): warning C4706: 条件表达式内的赋值
+     1>c:\program files\teledyne dalsa\sapera\examples\net\gigecamerademo20171108\gigecamerademo\serialport.cpp(600): warning C4701: 使用了可能未初始化的局部变量“RXBuff”
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _AFXDLL /D _DEBUG /D _VC80_UPGRADE=0x0710 /D _AFXDLL /l"0x0409" /I..\..\..\..\Classes\Gui /nologo /fo"Debug\GigeCameraDemo.res" GigeCameraDemo.rc 
+     1>项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(1)正在节点 3 上生成“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(2:3) (GetResolvedLinkLibs 个目标)。
+     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\Source\CorAPI\Win32\CorApi_2010.vcxproj' does not exist.
+     2>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\Basic\SapClassBasic_2010.vcxproj' does not exist.
+     2>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui\SapClassGui_2010.vcxproj”(GetResolvedLinkLibs 个目标)的操作。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\GigeCameraDemo.exe" /INCREMENTAL /NOLOGO ..\..\..\..\Lib\Win32\SapClassBasic.lib ..\..\..\..\Lib\Win32\VS2010\SapClassGuiD.lib /MANIFEST /ManifestFile:"Debug\GigeCameraDemo.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug\GigeCameraDemo.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Debug\GigeCameraDemo.lib" /MACHINE:X86 Debug\GigeCameraDemo.res
+         .\Debug\GigeCameraDemo.obj
+         .\Debug\GigeCameraDemoDlg.obj
+         .\Debug\InputDialog.obj
+         .\Debug\MessageDialog.obj
+         .\Debug\SerialPort.obj
+         .\Debug\SplashWnd.obj
+         .\Debug\StdAfx.obj
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBSaveImage@28，该符号在函数 "unsigned long __stdcall SaveImageData_1(void *)" (?SaveImageData_1@@YGKPAX@Z) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBCreateDirectory，该符号在函数 "unsigned long __stdcall SaveImageData_1(void *)" (?SaveImageData_1@@YGKPAX@Z) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBGetFormatTime，该符号在函数 "protected: virtual int __thiscall CGigeCameraDemoDlg::OnInitDialog(void)" (?OnInitDialog@CGigeCameraDemoDlg@@MAEHXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBIsPathExist，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBIniReadDouble，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBIniReadString，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBIniReadInt，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBIniFile，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>GigeCameraDemoDlg.obj : error LNK2019: 无法解析的外部符号 _ZLBGetCurrentPath，该符号在函数 "public: bool __thiscall CGigeCameraDemoDlg::ReadParamFromIniFile(void)" (?ReadParamFromIniFile@CGigeCameraDemoDlg@@QAE_NXZ) 中被引用
+     1>Debug\GigeCameraDemo.exe : fatal error LNK1120: 9 个无法解析的外部命令
+     1>已完成生成项目“C:\Program Files\Teledyne DALSA\Sapera\Examples\NET\GigeCameraDemo20171108\GigeCameraDemo\GigeCameraDemo_2010.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:08.51

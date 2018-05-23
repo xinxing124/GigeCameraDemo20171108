@@ -128,6 +128,8 @@ CGigeCameraDemoDlg::CGigeCameraDemoDlg(CWnd* pParent /*=NULL*/)
 	, m_iDotInfo(0)
 	, m_iWindowMode(0)
 	, m_iFirstFlag(0)
+	, m_dbCurrMileage(0.0)
+	, m_dbLastMileage(0.0)
 {
 	//{{AFX_DATA_INIT(CGigeCameraDemoDlg)
 		// NOTE: the ClassWizard will add member initialization here
@@ -883,8 +885,8 @@ void CGigeCameraDemoDlg::XferCallback_1(SapXferCallbackInfo *pInfo)
 		}
 		
 		start = clock();
-		sprintf(ch_ImageFileName_1,"%s\\%08d.jpg",m_cSavePath_1,m_iCountImage_1);
-		pBuffer_1->Save(ch_ImageFileName_1,"-format jpg");
+		sprintf(ch_ImageFileName_1,"%s\\%08d.bmp",m_cSavePath_1,m_iCountImage_1);
+		pBuffer_1->Save(ch_ImageFileName_1,"-format bmp");
 		end = clock();
 		timeSpace = end - start;
 		if(m_pfLog_1 != NULL)
@@ -1064,9 +1066,10 @@ LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
 {
 	static BYTE RBufOne[25]={0};
 	static int RPosOne=0;
-	static BYTE RBufTwo[25]={0};
+	static BYTE RBufTwo[50]={0};
 	static int RPosTwo=0;
-	INT16 revint16[4],rint16[8];
+	UINT16 revint16[4];
+	UINT32 rint32[8];
 	int iTemp;
 	m_RevFlag=true;
 	switch((UINT)lParam)
@@ -1087,11 +1090,21 @@ LRESULT CGigeCameraDemoDlg::OnReceiveData(WPARAM wParam, LPARAM lParam)
 		break;
 	case 2:
 		RBufTwo[RPosTwo++]=(UINT)wParam;
-		if(RPosTwo>21){
-			for(int m=3,n=0;m<19;n++,m+=2)
-				rint16[n] =RBufTwo[m] * 256+ RBufTwo[m + 1];
-			iTemp=(int)(rint16[4]+rint16[5]);
-			m_dbSpeed =iTemp/1.0;
+		//if(RPosTwo>21){
+		//	for(int m=3,n=0;m<19;n++,m+=2)
+		//		rint16[n] =RBufTwo[m] * 256+ RBufTwo[m + 1];
+		//	iTemp=(int)(rint16[4]+rint16[5]);
+		//	m_dbSpeed =iTemp/1.0;
+		//	RPosTwo=0;
+		//}
+		if(RPosTwo>36){
+			for(int m=3,n=0;m<35;n++,m+=4)
+				rint32[n] =(RBufTwo[m]<<24)+(RBufTwo[m+1]<<16)+(RBufTwo[m+2]<<8)+RBufTwo[m+3];
+			m_dbSpeed=rint32[5]/100.0*60.0*m_XiShu[1]/1000.0;
+			//m_dbCurrMileage=rint32[0]*0.3/1024.0/1000.0;
+			m_dbCurrMileage=rint32[0]*m_XiShu[3]/1000.0;//0.3/1024
+			//iTemp=(int)(rint32[4]+rint32[5]);
+			//m_dbSpeed =iTemp/1.0;
 			RPosTwo=0;
 		}
 		break;
@@ -2114,6 +2127,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	//m_XiShu[0]= ZLBIniReadDouble("Basic","VoltageParam_1",0.0,m_iniHandle);
 	m_XiShu[1]= ZLBIniReadDouble("Basic","SpeedParam",1.0,m_iniHandle);
 	//m_XiShu[2]= ZLBIniReadDouble("Basic","VoltageParam_2",0.0,m_iniHandle);
+	m_XiShu[3]= ZLBIniReadDouble("Basic","MileageParam",1.0,m_iniHandle);//X*0.3/1024
 
 	//判断目录是否存在,如果不存在就创建目录
 	//CString strDirvePath=m_strStoragePath.Left(2);
@@ -2414,9 +2428,10 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 	
 		byte sendvoltage[] = {0x01,0x03,0x02,0x58,0x00,0x04,0xC4,0x62};
 		//byte sendfrequency[]={0x02,0x03,0x00,0x22,0x00,0x01,0x24,0x33};
-		byte sendfrequency[]={0x01,0x03,0x00,0x00,0x00,0x08,0x44,0x0C};
+		//byte sendfrequency[]={0x01,0x03,0x00,0x00,0x00,0x08,0x44,0x0C};
+		byte sendfrequency[]={0x01,0x03,0x00,0x70,0x00,0x10,0x45,0xDD};
 		m_SerialPortOne.WriteToPort((char*)sendvoltage,8);
-		//m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
+		m_SerialPortTwo.WriteToPort((char*)sendfrequency,8);
 	}
 	if(nIDEvent==2)
 	{

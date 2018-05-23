@@ -204,7 +204,7 @@ public:
 public:
 	void RefreshUI();
 
-	double m_XiShu[2];
+	double m_XiShu[3];
 	int m_iDirectionFlag;
 	int m_iAddMileageFlag;
 	int m_iTempDirection;
@@ -216,6 +216,8 @@ public:
 	double m_dbVoltage_1;
 	double m_dbVoltage_2;
 	double m_dbSpeed;
+	double m_dbCurrMileage;
+	double m_dbLastMileage;
 	double m_dbOldVoltage_1;
 	double m_dbOldVoltage_2;
 	double m_dbOldSpeed;
