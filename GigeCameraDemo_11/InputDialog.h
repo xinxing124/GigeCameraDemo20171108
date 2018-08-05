@@ -1,21 +1,21 @@
-#pragma once
+ï»¿#pragma once
 
 
-// CInputDialog ¶Ô»°¿ò
+// CInputDialog å¯¹è¯æ¡†
 
 class CInputDialog : public CDialog
 {
 	DECLARE_DYNAMIC(CInputDialog)
 
 public:
-	CInputDialog(CWnd* pParent = NULL);   // ±ê×¼¹¹Ôìº¯Êı
+	CInputDialog(CWnd* pParent = NULL);   // æ ‡å‡†æ„é€ å‡½æ•°
 	virtual ~CInputDialog();
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 	enum { IDD = IDD_INPUT_DIALOG };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV æ”¯æŒ
 
 	DECLARE_MESSAGE_MAP()
 public:

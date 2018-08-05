@@ -1,4 +1,4 @@
-// GigeCameraDemoDlg.h : header file
+ï»¿// GigeCameraDemoDlg.h : header file
 //
 
 #if !defined(AFX_GIGECAMERADEMODLG_H__82BFE149_F01E_11D1_AF74_00A0C91AC0FB__INCLUDED_)
@@ -122,13 +122,13 @@ protected:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 public:
-	/*´ÓÅäÖÃÎÄ¼şÖĞ¶ÁÈ¡²ÎÊı*/
+	/*ä»é…ç½®æ–‡ä»¶ä¸­è¯»å–å‚æ•°*/
 	bool ReadParamFromIniFile();
-	/*½«²ÎÊıÅäÖÃĞ´Èëµ½ÅäÖÃÎÄ¼şÖĞ*/
+	/*å°†å‚æ•°é…ç½®å†™å…¥åˆ°é…ç½®æ–‡ä»¶ä¸­*/
 	bool WriteParamFileIniFile();
-	/*½«Êı¾İ»º´æ½øÈëÄÚ´æ*/
+	/*å°†æ•°æ®ç¼“å­˜è¿›å…¥å†…å­˜*/
 	//bool PushImageToMyBuffer(BUFFNODE listImageBuff[],char *pBuffer,int iBufferLength,int iWidth,int iHeight,int iImageType,int iImageCount);
-	/*ÊÇ·ñÆô¶¯±´¶ûÂË²¨Ëã·¨*/
+	/*æ˜¯å¦å¯åŠ¨è´å°”æ»¤æ³¢ç®—æ³•*/
 	afx_msg void OnCbnSelchangeComboBayer();
 
 public:
@@ -144,47 +144,47 @@ public:
 	
 	ULONGLONG m_SaveCount_1;
 	ULONGLONG m_SaveCount_2;
-	//ÅäÖÃÎÄ¼ş¾ä±ú
+	//é…ç½®æ–‡ä»¶å¥æŸ„
 	HANDLE    m_iniHandle;
-	//ÊÇ·ñ¿ªÆô×Ô¶¯´æ´¢¹¦ÄÜ
+	//æ˜¯å¦å¼€å¯è‡ªåŠ¨å­˜å‚¨åŠŸèƒ½
 	int m_iAutoStorage;
-	//´æ´¢Â·¾¶
+	//å­˜å‚¨è·¯å¾„
 	CString m_strStoragePath;
 	CString m_strLeftPath;
 	CString m_strRightPath;
 	
-	//´æ´¢¸ñÊ½
+	//å­˜å‚¨æ ¼å¼
 	int m_iStorageFormat;
-	//Êı¾İ¸ñÊ½
+	//æ•°æ®æ ¼å¼
 	int m_iPixelFormat;
-	//Í¼ÏñÑÕÉ«
+	//å›¾åƒé¢œè‰²
 	int m_iImageColor;
-	//µ±Ç°¼ÆÊı
+	//å½“å‰è®¡æ•°
 	ULONGLONG m_iCurrentCount_1;
 	ULONGLONG m_iCurrentCount_2;
 	double m_dFreeSpaceG;
-	//JPEGÑ¹ËõÒò×Ó
+	//JPEGå‹ç¼©å› å­
 	int m_iJpegFac;
 
-	// ÊÇ·ñ´æ´¢Í¼Ïñ¿Ø¼ş±äÁ¿
+	// æ˜¯å¦å­˜å‚¨å›¾åƒæ§ä»¶å˜é‡
 	CButton m_checkSaveImage;
-	// Í¼ÏñÊı¾İ´æ´¢×ÜÊı¿Ø¼ş±äÁ¿
+	// å›¾åƒæ•°æ®å­˜å‚¨æ€»æ•°æ§ä»¶å˜é‡
 	CEdit m_edSaveImageCount;
-	// ´æ´¢Í¼ÏñÂ·¾¶¿Ø¼ş±äÁ¿
+	// å­˜å‚¨å›¾åƒè·¯å¾„æ§ä»¶å˜é‡
 	CEdit m_edSaveImagePath;
-	// ´æ´¢Í¼Ïñ¸ñÊ½¿Ø¼ş±äÁ¿
+	// å­˜å‚¨å›¾åƒæ ¼å¼æ§ä»¶å˜é‡
 	CComboBox m_comSaveImageFormat;
-	// ÏñËØÎ»Éî¿Ø¼ş±äÁ¿
+	// åƒç´ ä½æ·±æ§ä»¶å˜é‡
 	CComboBox m_comImagePixelFormat;
-	// Í¼ÏñÍ¨µÀÊı
+	// å›¾åƒé€šé“æ•°
 	CComboBox m_comChannles;
-	// JPEGÑ¹ËõÒò×Ó
+	// JPEGå‹ç¼©å› å­
 	CEdit m_edJpegFac;
-	/*±´¶ûÂË²¨Í¼Ïñ*/
+	/*è´å°”æ»¤æ³¢å›¾åƒ*/
 	SapColorConversion   *m_Bayer;
-	// ÊÇ·ñÆô¶¯±´¶ûÂË²¨Ëã·¨
+	// æ˜¯å¦å¯åŠ¨è´å°”æ»¤æ³¢ç®—æ³•
 	CButton m_bBayerEnable;
-	/*±´¶ûÂË²¨Ëã·¨Ê¹ÄÜ*/
+	/*è´å°”æ»¤æ³¢ç®—æ³•ä½¿èƒ½*/
 	int  m_iBayerEnable;
 	CComboBox m_bayerType;
 	int  m_iBayerType;

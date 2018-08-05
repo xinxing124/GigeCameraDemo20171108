@@ -1,22 +1,22 @@
-#pragma once
+ï»¿#pragma once
 //#include "afxwin.h"
 //#include "afxext.h"
 
-// CMessageDialog ¶Ô»°¿ò
+// CMessageDialog å¯¹è¯æ¡†
 
 class CMessageDialog : public CDialog
 {
 	DECLARE_DYNAMIC(CMessageDialog)
 
 public:
-	CMessageDialog(CWnd* pParent = NULL);   // ±ê×¼¹¹Ôìº¯Êı
+	CMessageDialog(CWnd* pParent = NULL);   // æ ‡å‡†æ„é€ å‡½æ•°
 	virtual ~CMessageDialog();
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 	enum { IDD = IDD_MESSAGE_DIALOG };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV æ”¯æŒ
 
 	DECLARE_MESSAGE_MAP()
 public:

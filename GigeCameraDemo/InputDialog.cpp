@@ -1,4 +1,4 @@
-// InputDialog.cpp : ÊµÏÖÎÄ¼ş
+ï»¿// InputDialog.cpp : å®ç°æ–‡ä»¶
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CInputDialog ¶Ô»°¿ò
+// CInputDialog å¯¹è¯æ¡†
 
 IMPLEMENT_DYNAMIC(CInputDialog, CDialog)
 
@@ -34,12 +34,12 @@ BEGIN_MESSAGE_MAP(CInputDialog, CDialog)
 END_MESSAGE_MAP()
 
 
-// CInputDialog ÏûÏ¢´¦Àí³ÌĞò
+// CInputDialog æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 
 void CInputDialog::OnBnClickedOk()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	UpdateData();
 	CDialog::OnOK();
 }

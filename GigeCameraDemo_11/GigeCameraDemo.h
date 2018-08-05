@@ -1,4 +1,4 @@
-// GigeCameraDemo.h : main header file for the GIGECAMERADEMO application
+﻿// GigeCameraDemo.h : main header file for the GIGECAMERADEMO application
 //
 
 #if !defined(AFX_GIGECAMERADEMO_H__A8BE5972_F1B3_11D1_AF85_00A0C91AC0FB__INCLUDED_)

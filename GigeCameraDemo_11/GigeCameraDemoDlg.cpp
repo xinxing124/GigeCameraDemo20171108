@@ -1,4 +1,4 @@
-// GigeCameraDemoDlg.cpp : implementation file
+ï»¿// GigeCameraDemoDlg.cpp : implementation file
 //copy $(Configuration)64\$(ProjectName).exe D:\Debug64\
 
 #include "stdafx.h"
@@ -27,12 +27,12 @@ char*	pImageBuff_2;
 //struct tag_ImageBuff {
 //	char				pBuff[MAX_BUFF];
 //	int                 iImageCount;
-//	struct tag_ImageBuff *next;          //µ¥Á´±íµÄÖ¸ÕëÓò   
+//	struct tag_ImageBuff *next;          //å•é“¾è¡¨çš„æŒ‡é’ˆåŸŸ   
 //};
 //tag_ImageBuff *tag_head,*tag_curr,*tag_tail,*tag_tmp;
 
 WINDOWPLACEMENT m_wp;
-//×°ÔØÍ¼ÏñÊı¾İµÄ»·ĞÎ»º³åÊı×é
+//è£…è½½å›¾åƒæ•°æ®çš„ç¯å½¢ç¼“å†²æ•°ç»„
 BUFFNODE		listImageBuff_1[NUM_BUFF];
 static int				listImageWriteIndex_1=-1;
 static int				listImageReadIndex_1=-1;
@@ -42,7 +42,7 @@ static int				listImageReadIndex_2=-1;
 ULONGLONG GetPathUseSpace(const char *szPath);
 ULONGLONG GetDirFileCount(CString strPath);
 double ReadFreeSpace(CString strPath);
-//´æ´¢Í¼Æ¬Êı¾İ
+//å­˜å‚¨å›¾ç‰‡æ•°æ®
 CString m_strStorageFormat;
 char* m_cSavePath_1;
 char* m_cSavePath_2;
@@ -56,7 +56,7 @@ bool PushImageToMyBuffer_2(BUFFNODE listImageBuff[],char *pBuffer,int iBufferLen
 DWORD WINAPI   SaveImageData(LPVOID pParam);
 DWORD WINAPI   SaveImageData_1(LPVOID pParam);
 DWORD WINAPI   SaveImageData_2(LPVOID pParam);
-//´æ´¢RGB24µÄÍ¼ÏñÊı¾İÖ¸Õë
+//å­˜å‚¨RGB24çš„å›¾åƒæ•°æ®æŒ‡é’ˆ
 static char    *m_pRgb24Buffer;
 static SapBayer::Align m_align[4];
 static FILE *m_pfLog_1;
@@ -216,16 +216,16 @@ END_MESSAGE_MAP()
 // CGigeCameraDemoDlg message handlers
 
 LRESULT   CGigeCameraDemoDlg::onShowTask(WPARAM   wParam,LPARAM   lParam) 
-//wParam½ÓÊÕµÄÊÇÍ¼±êµÄID£¬¶ølParam½ÓÊÕµÄÊÇÊó±êµÄĞĞÎª 
+//wParamæ¥æ”¶çš„æ˜¯å›¾æ ‡çš„IDï¼Œè€ŒlParamæ¥æ”¶çš„æ˜¯é¼ æ ‡çš„è¡Œä¸º 
 { 
     if(wParam!=IDR_MAINFRAME) 
     return   1; 
     switch(lParam) 
     { 
-            case WM_RBUTTONUP://ÓÒ¼üÆğÀ´Ê±µ¯³ö¿ì½İ²Ëµ¥£¬ÕâÀïÖ»ÓĞÒ»¸ö"¹Ø±Õ" 
+            case WM_RBUTTONUP://å³é”®èµ·æ¥æ—¶å¼¹å‡ºå¿«æ·èœå•ï¼Œè¿™é‡Œåªæœ‰ä¸€ä¸ª"å…³é—­" 
             { 
                 LPPOINT   lpoint=new   tagPOINT; 
-                ::GetCursorPos(lpoint);//µÃµ½Êó±êÎ»ÖÃ 
+                ::GetCursorPos(lpoint);//å¾—åˆ°é¼ æ ‡ä½ç½® 
 				CMenu menu,*popmenu;
 				menu.LoadMenu(IDR_MENU1);
 				popmenu = menu.GetSubMenu(0);
@@ -235,7 +235,7 @@ LRESULT   CGigeCameraDemoDlg::onShowTask(WPARAM   wParam,LPARAM   lParam)
 				#endif
 
 				CPoint myPoint;
-				GetCursorPos(&myPoint);  //Êó±êÎ»ÖÃ
+				GetCursorPos(&myPoint);  //é¼ æ ‡ä½ç½®
 				SetForegroundWindow(); 
 				popmenu->TrackPopupMenu(TPM_LEFTALIGN,myPoint.x,myPoint.y,this);
 				PostMessage(WM_NULL,0,0);
@@ -247,7 +247,7 @@ LRESULT   CGigeCameraDemoDlg::onShowTask(WPARAM   wParam,LPARAM   lParam)
         return   0; 
     } 
 
-//½«Êı¾İ»º´æ½øÈëÄÚ´æ BUFFNODE		listImageBuff_1[NUM_BUFF];
+//å°†æ•°æ®ç¼“å­˜è¿›å…¥å†…å­˜ BUFFNODE		listImageBuff_1[NUM_BUFF];
 bool PushImageToMyBuffer(BUFFNODE listImageBuff[],char *pBuffer,int iBufferLength,int iWidth,int iHeight,int iImageType,int iImageCount)
 {
 /*
@@ -420,17 +420,17 @@ BOOL CreateFile2(CString fileName, CString content, BOOL canBeEmptyFile)
     if(content.GetLength() > 0 || canBeEmptyFile)
     {
 
-        CFile outFile;              //  ×¢£ºCStdioFileÊÇCFileµÄ×ÓÀà£¬ÕâÀïÓÃÕâ¸öÀàÒ²ÊÇ¿ÉÒÔµÄ
+        CFile outFile;              //  æ³¨ï¼šCStdioFileæ˜¯CFileçš„å­ç±»ï¼Œè¿™é‡Œç”¨è¿™ä¸ªç±»ä¹Ÿæ˜¯å¯ä»¥çš„
         outFile.Open(fileName, CFile::modeCreate | CFile::modeWrite | CFile::typeBinary);
         /*
-        ÉÏÃæÓÃOpenº¯ÊıÊ±£º
-        1) ²ÎÊıÖ»ÓÃmodeCreateµÄ»°£¬ÔòÖ»»á´´½¨ÎÄ¼ş(Èç¹ûÎÄ¼ş²»´æÔÚÔò´´½¨£¬·ñÔòÇå¿ÕÄÚÈİ)
+        ä¸Šé¢ç”¨Openå‡½æ•°æ—¶ï¼š
+        1) å‚æ•°åªç”¨modeCreateçš„è¯ï¼Œåˆ™åªä¼šåˆ›å»ºæ–‡ä»¶(å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨åˆ™åˆ›å»ºï¼Œå¦åˆ™æ¸…ç©ºå†…å®¹)
 
-        2) Èç¹ûÖ»ÓÃmodeWriteµÄ»°£¬Èç¹ûÎÄ¼ş²»´æÔÚ£¬Ôò´ò¿ªÊ§°Ü£¬·ñÔò´ò¿ª£¬²¢Ìí¼ÓÄÚÈİµ½ÎÄ¼şÍ·²¿
+        2) å¦‚æœåªç”¨modeWriteçš„è¯ï¼Œå¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ™æ‰“å¼€å¤±è´¥ï¼Œå¦åˆ™æ‰“å¼€ï¼Œå¹¶æ·»åŠ å†…å®¹åˆ°æ–‡ä»¶å¤´éƒ¨
 
-        3) Èç¹ûÔÚ²ÎÊı×îºó¼ÓÁËCFile::typeTextµÄ»°£¬²»¹ÜÎÄ¼şÊÇ·ñ´æÔÚ¼°Ç°ÃæÊÇ·ñÆäËû²ÎÊı£¬¶¼»áÊ§°Ü£¬²»ÖªµÀÎªÊ²Ã´£¿£¿
+        3) å¦‚æœåœ¨å‚æ•°æœ€ååŠ äº†CFile::typeTextçš„è¯ï¼Œä¸ç®¡æ–‡ä»¶æ˜¯å¦å­˜åœ¨åŠå‰é¢æ˜¯å¦å…¶ä»–å‚æ•°ï¼Œéƒ½ä¼šå¤±è´¥ï¼Œä¸çŸ¥é“ä¸ºä»€ä¹ˆï¼Ÿï¼Ÿ
 
-        4) ÓÃCFile::typeBinaryµÄ»°£¬²»¹ÜÎÄ¼şÊÇ·ñ´æÔÚ£¬¶¼»á³É¹¦£¡
+        4) ç”¨CFile::typeBinaryçš„è¯ï¼Œä¸ç®¡æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œéƒ½ä¼šæˆåŠŸï¼
         */
 
 
@@ -539,7 +539,7 @@ DWORD WINAPI   SaveImageData(LPVOID pParam)
 	    //m_pTimeFileName = ZLBGetFormatTime(time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,time.wMilliseconds);
 		if(!m_bDirExit_1)
 		{
-			//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+			//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 			ZLBCreateDirectory(m_cSavePath_1);
 			ZLBCreateDirectory(m_cSavePath_2);
 			m_bDirExit_1=true;
@@ -602,7 +602,7 @@ DWORD WINAPI   SaveImageData_1(LPVOID pParam)
 
 	   if(!m_bDirExit_1)
 		{
-			//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+			//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 			m_bDirExit_1=true;
 			ZLBCreateDirectory(m_cSavePath_1);
 		}
@@ -680,7 +680,7 @@ DWORD WINAPI   SaveImageData_1(LPVOID pParam)
 	 ////  memcpy(data,listBuff_1.GetHead(),PIC_BUFF);
 		//if(!m_bDirExit_1)
 		//{
-		//	//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+		//	//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 		//	m_bDirExit_1=true;
 		//	ZLBCreateDirectory(m_cSavePath_1);
 		//}
@@ -747,7 +747,7 @@ DWORD WINAPI   SaveImageData_2(LPVOID pParam)
 			//CString temp;
 			//temp.Format("#Path:%s$\r\n",m_cSavePath_2);
 			//pDlg->m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
-			//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+			//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 			m_bDirExit_2=true;
 			ZLBCreateDirectory(m_cSavePath_2);
 			
@@ -812,7 +812,7 @@ DWORD WINAPI   SaveImageData_2(LPVOID pParam)
 		//}
 		//if(!m_bDirExit_2)
 		//{
-		//	//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+		//	//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 		//	m_bDirExit_2=true;
 		//	ZLBCreateDirectory(m_cSavePath_2);
 		//}
@@ -880,7 +880,7 @@ void CGigeCameraDemoDlg::XferCallback_1(SapXferCallbackInfo *pInfo)
    {
 	   if(!m_bDirExit_1)
 		{
-			//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+			//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 			m_bDirExit_1=true;
 			ZLBCreateDirectory(m_cSavePath_1);
 		}
@@ -940,7 +940,7 @@ void CGigeCameraDemoDlg::XferCallback_2(SapXferCallbackInfo *pInfo)
 			//CString temp;
 			//temp.Format("#Path:%s$\r\n",m_cSavePath_2);
 			//pDlg->m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
-			//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+			//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 			m_bDirExit_2=true;
 			ZLBCreateDirectory(m_cSavePath_2);
 			
@@ -966,7 +966,7 @@ void CGigeCameraDemoDlg::XferCallback_2(SapXferCallbackInfo *pInfo)
 
 	 //  if(!m_bDirExit)
 		//{
-		//	//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+		//	//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 		//	ZLBCreateDirectory(m_cSavePath_1);
 		//	ZLBCreateDirectory(m_cSavePath_2);
 		//	m_bDirExit=true;
@@ -1239,7 +1239,7 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);	// Set small icon
 	SetIcon(m_hIcon, TRUE);		// Set big icon
 	this->ShowWindow(1);
-	AfxBeginThread(ThreadFunc,GetSafeHwnd(),THREAD_PRIORITY_NORMAL);//µ÷ÓÃ
+	AfxBeginThread(ThreadFunc,GetSafeHwnd(),THREAD_PRIORITY_NORMAL);//è°ƒç”¨
 
 	for(int i=0;i<30;i++)
 	{
@@ -1322,7 +1322,7 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 //	g_hThread_2 = NULL;
 //
 //	//CRect rect;    
-//    GetClientRect(&rect);     //È¡¿Í»§Çø´óĞ¡  
+//    GetClientRect(&rect);     //å–å®¢æˆ·åŒºå¤§å°  
 //    Old.x=rect.right-rect.left;
 //    Old.y=rect.bottom-rect.top;
 //
@@ -1331,14 +1331,14 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 //	nid.hWnd=this-> m_hWnd; 
 //	nid.uID=IDR_MAINFRAME; 
 //	nid.uFlags=NIF_ICON|NIF_MESSAGE|NIF_TIP; 
-//	nid.uCallbackMessage=(WM_USER+10);//×Ô¶¨ÒåµÄÏûÏ¢Ãû³Æ 
+//	nid.uCallbackMessage=(WM_USER+10);//è‡ªå®šä¹‰çš„æ¶ˆæ¯åç§° 
 //	nid.hIcon=LoadIcon(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_MAINFRAME)); 
-//	strcpy_s(nid.szTip, "²É¼¯ÈÎÎñ ");//ĞÅÏ¢ÌáÊ¾ÌõÎª"¼Æ»®ÈÎÎñÌáĞÑ" 
-//	Shell_NotifyIcon(NIM_ADD,&nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
-//	//ShowWindow(SW_HIDE);//Òş²ØÖ÷´°¿Ú 
+//	strcpy_s(nid.szTip, "é‡‡é›†ä»»åŠ¡ ");//ä¿¡æ¯æç¤ºæ¡ä¸º"è®¡åˆ’ä»»åŠ¡æé†’" 
+//	Shell_NotifyIcon(NIM_ADD,&nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
+//	//ShowWindow(SW_HIDE);//éšè—ä¸»çª—å£ 
 //
 //	//WINDOWPLACEMENT m_wp;
-//	//GetWindowPlacement(&m_wp); //»Ö¸´Ê±ÓÃ
+//	//GetWindowPlacement(&m_wp); //æ¢å¤æ—¶ç”¨
 //	//WINDOWPLACEMENT wp;
 //	//wp.length=sizeof(WINDOWPLACEMENT);
 //	//wp.flags=WPF_RESTORETOMAXIMIZED;
@@ -1391,10 +1391,10 @@ BOOL CGigeCameraDemoDlg::OnInitDialog()
 //		SetTimer(3,1000,NULL);
 //
 //	m_iWindowMode=1;
-//	// Òş²ØTitleBar
+//	// éšè—TitleBar
 //	ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED);
 //	//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
-//	//ModifyStyle(WS_CAPTION,0,0);//Èç¹û²»ÏëÈ¥µô±êÌâÀ¸£¬È¥µô¸Ã¾ä¡£
+//	//ModifyStyle(WS_CAPTION,0,0);//å¦‚æœä¸æƒ³å»æ‰æ ‡é¢˜æ ï¼Œå»æ‰è¯¥å¥ã€‚
 //	//SendMessage(WM_SYSCOMMAND,SC_MAXIMIZE,0);
 //	ShowWindow(SW_SHOWMAXIMIZED);
 //	m_ImageWnd_1.ShowWindow(SW_HIDE);
@@ -1557,7 +1557,7 @@ BOOL CGigeCameraDemoDlg::IsUserAdmin()
 	SC_HANDLE schSCManager = OpenSCManager(NULL,NULL,SC_MANAGER_CREATE_SERVICE); 
 	if (schSCManager == NULL) 
 	{
-		//·Ç¹ÜÀíÔ±
+		//éç®¡ç†å‘˜
 		b=FALSE;
 	}
 	else
@@ -1597,7 +1597,7 @@ BOOL CGigeCameraDemoDlg::CreateObjects_1()
 	//	if(bSet == FALSE)
 	//		return false;
 	//	
-	//	/*´´½¨±´¶ûÂË²¨*/
+	//	/*åˆ›å»ºè´å°”æ»¤æ³¢*/
 	//	if(!m_Bayer->Create())
 	//	{
 	//		return false;
@@ -1688,7 +1688,7 @@ BOOL CGigeCameraDemoDlg::CreateObjects_2()
 	//	if(bSet == FALSE)
 	//		return false;
 	//	
-	//	/*´´½¨±´¶ûÂË²¨*/
+	//	/*åˆ›å»ºè´å°”æ»¤æ³¢*/
 	//	if(!m_Bayer->Create())
 	//	{
 	//		return false;
@@ -1834,7 +1834,7 @@ void CGigeCameraDemoDlg::OnDestroy()
 	//delete pMessageDialog;  
 
 	CDialog::OnDestroy();
-	Shell_NotifyIcon(NIM_DELETE,&nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
+	Shell_NotifyIcon(NIM_DELETE,&nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
 	// Destroy all objects
 	DestroyObjects_1();
 	DestroyObjects_2();
@@ -1880,21 +1880,21 @@ void CGigeCameraDemoDlg::OnSize(UINT nType, int cx, int cy)
    if(nType==SIZE_RESTORED||nType==SIZE_MAXIMIZED)
     {
        float fsp[2];
-    POINT Newp; //»ñÈ¡ÏÖÔÚ¶Ô»°¿òµÄ´óĞ¡
+    POINT Newp; //è·å–ç°åœ¨å¯¹è¯æ¡†çš„å¤§å°
     CRect recta;    
-    GetClientRect(&recta);     //È¡¿Í»§Çø´óĞ¡  
+    GetClientRect(&recta);     //å–å®¢æˆ·åŒºå¤§å°  
     Newp.x=recta.right-recta.left;
     Newp.y=recta.bottom-recta.top;
     fsp[0]=(float)Newp.x/Old.x;
     fsp[1]=(float)Newp.y/Old.y;
     CRect Rect;
     int woc;
-    CPoint OldTLPoint,TLPoint; //×óÉÏ½Ç
-    CPoint OldBRPoint,BRPoint; //ÓÒÏÂ½Ç
-    HWND  hwndChild=::GetWindow(m_hWnd,GW_CHILD);  //ÁĞ³öËùÓĞ¿Ø¼ş  
+    CPoint OldTLPoint,TLPoint; //å·¦ä¸Šè§’
+    CPoint OldBRPoint,BRPoint; //å³ä¸‹è§’
+    HWND  hwndChild=::GetWindow(m_hWnd,GW_CHILD);  //åˆ—å‡ºæ‰€æœ‰æ§ä»¶  
     while(hwndChild)    
     {    
-        woc=::GetDlgCtrlID(hwndChild);//È¡µÃID
+        woc=::GetDlgCtrlID(hwndChild);//å–å¾—ID
         GetDlgItem(woc)->GetWindowRect(Rect);  
         ScreenToClient(Rect);  
         OldTLPoint = Rect.TopLeft();  
@@ -1917,12 +1917,12 @@ void CGigeCameraDemoDlg::OnSize(UINT nType, int cx, int cy)
 		//nid.hWnd=this-> m_hWnd; 
 		//nid.uID=IDR_MAINFRAME; 
 		//nid.uFlags=NIF_ICON|NIF_MESSAGE|NIF_TIP   ; 
-		//nid.uCallbackMessage=(WM_USER+10);//×Ô¶¨ÒåµÄÏûÏ¢Ãû³Æ 
+		//nid.uCallbackMessage=(WM_USER+10);//è‡ªå®šä¹‰çš„æ¶ˆæ¯åç§° 
 		//nid.hIcon=LoadIcon(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_MAINFRAME)); 
-		//strcpy(nid.szTip, "¼Æ»®ÈÎÎñÌáĞÑ ");//ĞÅÏ¢ÌáÊ¾ÌõÎª"¼Æ»®ÈÎÎñÌáĞÑ" 
-		//Shell_NotifyIcon(NIM_ADD,&nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
-	    Shell_NotifyIcon(NIM_MODIFY,&nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
-		ShowWindow(SW_HIDE);//Òş²ØÖ÷´°¿Ú 
+		//strcpy(nid.szTip, "è®¡åˆ’ä»»åŠ¡æé†’ ");//ä¿¡æ¯æç¤ºæ¡ä¸º"è®¡åˆ’ä»»åŠ¡æé†’" 
+		//Shell_NotifyIcon(NIM_ADD,&nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
+	    Shell_NotifyIcon(NIM_MODIFY,&nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
+		ShowWindow(SW_HIDE);//éšè—ä¸»çª—å£ 
    }
 
    //CRect rClient;
@@ -2032,7 +2032,7 @@ void CGigeCameraDemoDlg::OnTest()
 	//m_SerialPort.WriteToPort(temp.GetBuffer(),temp.GetLength());
 	//m_bTimerFlag=false;
 	//SetTimer(2,60000,NULL);
-	//20KĞĞÆµ30·ÖÖÓÒ²¾ÍÊÇ20000/2048*30*60=17578.125
+	//20Kè¡Œé¢‘30åˆ†é’Ÿä¹Ÿå°±æ˜¯20000/2048*30*60=17578.125
 	//DWORD dt;
 	//DWORD md;
 	//CString temp;
@@ -2045,7 +2045,7 @@ void CGigeCameraDemoDlg::OnTest()
 	//	//  dismissed with OK
 	//	
 	//	md=dlg.m_DelayTime;
-	//	dt=(1000*60)*md;//5·ÖÖÓ
+	//	dt=(1000*60)*md;//5åˆ†é’Ÿ
 	//	::GetLocalTime(&time);	
 
 	//	//temp.Format("#%d-%02d-%02d %02d:%02d:%02d.%03d Test %d Minute,20K Line Frequency 20002.134/2048*60*%d=%f$\r\n",time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,time.wMilliseconds,int(dt/(1000*60)),int(dt/(1000*60)),double(20002.134/2048*60*(dt/(1000*60))));
@@ -2054,7 +2054,7 @@ void CGigeCameraDemoDlg::OnTest()
 	//	Sleep(1);
 	//	OnGrab();
 	//	DWORD dw = ::GetTickCount();
-	//	while( (::GetTickCount()- dw ) <= dt) //1ºÁÃë
+	//	while( (::GetTickCount()- dw ) <= dt) //1æ¯«ç§’
 	//	{
 	//		//do something
 	//		if(!DoEvents())
@@ -2089,7 +2089,7 @@ void CGigeCameraDemoDlg::OnTest()
 
 bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 {
-	 //»ñÈ¡ÅäÖÃÎÄ¼şËùÔÚÄ¿Â¼
+	 //è·å–é…ç½®æ–‡ä»¶æ‰€åœ¨ç›®å½•
 	int iCameraCount=0;
 	char chPath[512];
 	char *pImageSavePath = NULL;
@@ -2110,7 +2110,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	sprintf_s(chPath,"%s\\%s",pConfigPath,strIni.GetBuffer(0));
 	m_iniHandle = ZLBIniFile(chPath);
     
-	//¶ÁÈ¡»ù±¾ÅäÖÃ¼üÖµ
+	//è¯»å–åŸºæœ¬é…ç½®é”®å€¼
 	m_iAutoStorage = ZLBIniReadInt("Basic","AutoStorage",0,m_iniHandle);
 	pTmp= ZLBIniReadString("Basic","StoragePath","D:\\Image",m_iniHandle);
 	m_strStoragePath.Format("%s",pTmp);
@@ -2123,7 +2123,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	m_XiShu[1]= ZLBIniReadDouble("Basic","SpeedParam",1.0,m_iniHandle);
 	//m_XiShu[2]= ZLBIniReadDouble("Basic","VoltageParam_2",0.0,m_iniHandle);
 
-	//ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ,Èç¹û²»´æÔÚ¾Í´´½¨Ä¿Â¼
+	//åˆ¤æ–­ç›®å½•æ˜¯å¦å­˜åœ¨,å¦‚æœä¸å­˜åœ¨å°±åˆ›å»ºç›®å½•
 	//CString strDirvePath=m_strStoragePath.Left(2);
 	//GetDriveType(strDirvePath);
 	bool bb=ZLBIsPathExist(m_strStoragePath.Left(2).GetBuffer());
@@ -2140,7 +2140,7 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 		this->MessageBox("The drive does not exist,Reboot...","error");
 		exit(0);
 	}
-	//¶ÁÈ¡Ïà»úÅäÖÃ¼üÖµ
+	//è¯»å–ç›¸æœºé…ç½®é”®å€¼
 	//iCameraCount = ZLBIniReadInt("Camera","CameraCount",0,m_iniHandle);
 	pTmp= ZLBIniReadString("Camera","ServerItem01","Linea_M2048-7um_1",m_iniHandle);
 	m_serverName_1.Format("%s",pTmp);
@@ -2156,10 +2156,10 @@ bool CGigeCameraDemoDlg::ReadParamFromIniFile()
 	return true;
 }
 
-/*½«²ÎÊıÅäÖÃĞ´Èëµ½ÅäÖÃÎÄ¼şÖĞ*/
+/*å°†å‚æ•°é…ç½®å†™å…¥åˆ°é…ç½®æ–‡ä»¶ä¸­*/
 bool CGigeCameraDemoDlg::WriteParamFileIniFile()
 {
-	/*»ñÈ¡ÅäÖÃÎÄ¼şËùÔÚÄ¿Â¼*/
+	/*è·å–é…ç½®æ–‡ä»¶æ‰€åœ¨ç›®å½•*/
 	char chPath[512];
 	char *pImageSavePath = NULL;
 	char *pRecordSavePath = NULL;
@@ -2176,30 +2176,30 @@ bool CGigeCameraDemoDlg::WriteParamFileIniFile()
 	//sprintf(chPath,"%s\\%s",pConfigPath,strIni.GetBuffer(0));
 	//m_iniHandle = ZLBIniFile(m_strSoftWareInfName.GetBuffer());  
 
-	//ZLBIniWriteInt("Ïà»úÅäÖÃ","ÊÇ·ñ¿ªÆô´æ´¢Í¼Ïñ(1-¿ªÆô 0-¹Ø±Õ)",m_iStartImage,m_iniHandle);
-	//ZLBIniWriteInt("Ïà»úÅäÖÃ","´æ´¢Í¼Ïñ×ÜµÄÕÅÊı",m_iSaveImageCount,m_iniHandle);
-	//ZLBIniWriteString("Ïà»úÅäÖÃ","´æ´¢Í¼ÏñµÄÄ¿Â¼",m_strStoragePath.GetBuffer(0),m_iniHandle);
-	//ZLBIniWriteInt("Ïà»úÅäÖÃ","´æ´¢Í¼Ïñ²É¼¯¸ñÊ½0-BMP 1-JPEG",m_iStorageFormat,m_iniHandle);
-	//ZLBIniWriteInt("Ïà»úÅäÖÃ","²É¼¯Êı¾İ¸ñÊ½Mono8 0-8bit 1-10bit",m_iPixelFormat,m_iniHandle);
-	//ZLBIniWriteInt("Ïà»úÅäÖÃ","Í¼ÏñÑÕÉ«1-Grey 3-Color",m_iImageColor,m_iniHandle);
+	//ZLBIniWriteInt("ç›¸æœºé…ç½®","æ˜¯å¦å¼€å¯å­˜å‚¨å›¾åƒ(1-å¼€å¯ 0-å…³é—­)",m_iStartImage,m_iniHandle);
+	//ZLBIniWriteInt("ç›¸æœºé…ç½®","å­˜å‚¨å›¾åƒæ€»çš„å¼ æ•°",m_iSaveImageCount,m_iniHandle);
+	//ZLBIniWriteString("ç›¸æœºé…ç½®","å­˜å‚¨å›¾åƒçš„ç›®å½•",m_strStoragePath.GetBuffer(0),m_iniHandle);
+	//ZLBIniWriteInt("ç›¸æœºé…ç½®","å­˜å‚¨å›¾åƒé‡‡é›†æ ¼å¼0-BMP 1-JPEG",m_iStorageFormat,m_iniHandle);
+	//ZLBIniWriteInt("ç›¸æœºé…ç½®","é‡‡é›†æ•°æ®æ ¼å¼Mono8 0-8bit 1-10bit",m_iPixelFormat,m_iniHandle);
+	//ZLBIniWriteInt("ç›¸æœºé…ç½®","å›¾åƒé¢œè‰²1-Grey 3-Color",m_iImageColor,m_iniHandle);
 
 	return true;
 }
 
 void CGigeCameraDemoDlg::OnMainitemShow()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	//SIZE_RESTORED
 	//b_show=true;
 	SetWindowPos(&CWnd::wndTopMost,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
-	ShowWindow(SW_SHOW||SW_RESTORE);//¼òµ¥µÄÏÔÊ¾Ö÷´°¿ÚÍêÊÂ¶ù 
+	ShowWindow(SW_SHOW||SW_RESTORE);//ç®€å•çš„æ˜¾ç¤ºä¸»çª—å£å®Œäº‹å„¿ 
 	
 }
 
 
 void CGigeCameraDemoDlg::OnMainitemHide()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	//b_show=false;
 	ShowWindow(SW_HIDE);
 
@@ -2208,7 +2208,7 @@ void CGigeCameraDemoDlg::OnMainitemHide()
 
 void CGigeCameraDemoDlg::OnMainitemExit()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	EndDialog(TRUE);
 }
 
@@ -2261,7 +2261,7 @@ void CGigeCameraDemoDlg::FitToWindow(SapView *pView)
 }
 void CGigeCameraDemoDlg::OnGrab()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	   DWORD	word;
 	   DWORD	word_1;
 	   DWORD	word_2;
@@ -2349,7 +2349,7 @@ void CGigeCameraDemoDlg::OnGrab()
 
 void CGigeCameraDemoDlg::OnFreeze()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	if( m_Xfer_1->Freeze()&&m_Xfer_2->Freeze())
 	{
 		if (CAbortDlg(this, m_Xfer_1).DoModal() != IDOK||CAbortDlg(this, m_Xfer_2).DoModal() != IDOK) 
@@ -2373,7 +2373,7 @@ void CGigeCameraDemoDlg::OnFreeze()
 
 //LRESULT CGigeCameraDemoDlg::DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 //{
-//	// TODO: ÔÚ´ËÌí¼Ó×¨ÓÃ´úÂëºÍ/»òµ÷ÓÃ»ùÀà
+//	// TODO: åœ¨æ­¤æ·»åŠ ä¸“ç”¨ä»£ç å’Œ/æˆ–è°ƒç”¨åŸºç±»
 //	if(message==WM_NCPAINT)
 //	{
 //		if(b_show==false)
@@ -2387,8 +2387,8 @@ void CGigeCameraDemoDlg::OnFreeze()
 
 void CGigeCameraDemoDlg::OnNcPaint()
 {
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂë
-	// ²»Îª»æÍ¼ÏûÏ¢µ÷ÓÃ __super::OnNcPaint()
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
+	// ä¸ä¸ºç»˜å›¾æ¶ˆæ¯è°ƒç”¨ __super::OnNcPaint()
 	//static int i_first_show=1;
 	//if(i_first_show>0)
 	//{
@@ -2402,7 +2402,7 @@ void CGigeCameraDemoDlg::OnNcPaint()
 
 void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	CString temp;
 	SYSTEMTIME time;
 	ULONGLONG left,right;
@@ -2477,8 +2477,8 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 		m_statusWnd.SetWindowText(temp);
 		temp="";
 		temp.Format("%d-%02d-%02d %02d:%02d:%02d.%03d FS:%.02fG\r\nTL:%ld TR:%ld AL:%ld AR:%ld",time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,time.wMilliseconds,m_dFreeSpaceG,m_iCountImage_1,m_iCountImage_2,left,right);
-		strcpy_s(nid.szTip, temp);//ĞÅÏ¢ÌáÊ¾ÌõÎª"¼Æ»®ÈÎÎñÌáĞÑ" 
-		Shell_NotifyIcon(NIM_MODIFY,&nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
+		strcpy_s(nid.szTip, temp);//ä¿¡æ¯æç¤ºæ¡ä¸º"è®¡åˆ’ä»»åŠ¡æé†’" 
+		Shell_NotifyIcon(NIM_MODIFY,&nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
 		
 	}
 	__super::OnTimer(nIDEvent);
@@ -2487,7 +2487,7 @@ void CGigeCameraDemoDlg::OnTimer(UINT_PTR nIDEvent)
 
 void CGigeCameraDemoDlg::OnMainitemTest()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	OnTest();
 }
 
@@ -2495,21 +2495,21 @@ void CGigeCameraDemoDlg::OnMainitemTest()
 void CGigeCameraDemoDlg::OnBnClickedReturn()
 {
 	m_iWindowMode=1;
-	// Òş²ØTitleBar
+	// éšè—TitleBar
 	ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED);
 
 
 	//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
-	//ModifyStyle(WS_CAPTION,0,0);//Èç¹û²»ÏëÈ¥µô±êÌâÀ¸£¬È¥µô¸Ã¾ä¡£
+	//ModifyStyle(WS_CAPTION,0,0);//å¦‚æœä¸æƒ³å»æ‰æ ‡é¢˜æ ï¼Œå»æ‰è¯¥å¥ã€‚
 	//SendMessage(WM_SYSCOMMAND,SC_MAXIMIZE,0);
 	//this->SetBackgroundColor(RGB(94,94,94),RGB(0,0,0)); 
 	ShowWindow(SW_SHOWMAXIMIZED);
 
 
-	//// ÏÔÊ¾TitleBar
+	//// æ˜¾ç¤ºTitleBar
 	//ModifyStyle(0, WS_CAPTION, SWP_FRAMECHANGED);
-	////ModifyStyle(WS_CAPTION,0,1);//Èç¹û²»ÏëÈ¥µô±êÌâÀ¸£¬È¥µô¸Ã¾ä¡£
-	// //É¾³ı±êÌâÀ¸·ç¸ñ 
+	////ModifyStyle(WS_CAPTION,0,1);//å¦‚æœä¸æƒ³å»æ‰æ ‡é¢˜æ ï¼Œå»æ‰è¯¥å¥ã€‚
+	// //åˆ é™¤æ ‡é¢˜æ é£æ ¼ 
 	////ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
 	//ShowWindow(SW_NORMAL);
 
@@ -2567,53 +2567,53 @@ void CGigeCameraDemoDlg::RefreshUI()
 int iInfo;
 CString str = "36.00V";
 double SpeedVal=0.0;
-CDC   hMemDC; //¼ÓÔØ±³¾°Í¼Æ¬µÄÄÚ´æDC
+CDC   hMemDC; //åŠ è½½èƒŒæ™¯å›¾ç‰‡çš„å†…å­˜DC
 int cx, cy;  
 CImage  image;
 CRect   rect;
 CDC *pDc = NULL;  
 CWnd *pWnd = NULL;  
-pWnd    = GetDlgItem(IDC_VIEW_WND3);//»ñÈ¡¿Ø¼ş¾ä±ú  
+pWnd    = GetDlgItem(IDC_VIEW_WND3);//è·å–æ§ä»¶å¥æŸ„  
 //pWnd->MoveWindow(0,0,1024,768);
-pWnd->GetClientRect(&rect);//»ñÈ¡¾ä±úÖ¸Ïò¿Ø¼şÇøÓòµÄ´óĞ¡
-pDc = pWnd->GetDC();//»ñÈ¡pictureµÄDC  
+pWnd->GetClientRect(&rect);//è·å–å¥æŸ„æŒ‡å‘æ§ä»¶åŒºåŸŸçš„å¤§å°
+pDc = pWnd->GetDC();//è·å–pictureçš„DC  
 
-//pDc =GetDC();//»ñÈ¡pictureµÄDC  
+//pDc =GetDC();//è·å–pictureçš„DC  
 //CPaintDC dc(this);
-CDC  * pMemDc=NULL; //¼ÓÔØ±³¾°Í¼Æ¬µÄÄÚ´æDC
+CDC  * pMemDc=NULL; //åŠ è½½èƒŒæ™¯å›¾ç‰‡çš„å†…å­˜DC
 pMemDc=new CDC;
 pMemDc->CreateCompatibleDC(pDc);
-CBitmap bmp;//ÕâÀïµÄBitmapÊÇ±ØĞëµÄ£¬·ñÔòµ±ĞÄÅª³öÒ»¸ö´óºÚ¿éÅ¶¡£
+CBitmap bmp;//è¿™é‡Œçš„Bitmapæ˜¯å¿…é¡»çš„ï¼Œå¦åˆ™å½“å¿ƒå¼„å‡ºä¸€ä¸ªå¤§é»‘å—å“¦ã€‚
 bmp.CreateCompatibleBitmap(pDc,rect.Width(),rect.Height());
 pMemDc->SelectObject(&bmp);
  
-ImageFrom_IDResource(IDB_PNG57,"PNG",&image);//±³¾°Í¼
+ImageFrom_IDResource(IDB_PNG57,"PNG",&image);//èƒŒæ™¯å›¾
 rect.top =0;
 rect.left =0;
 rect.bottom=image.GetHeight();   
 rect.right =image.GetWidth();  
-image.Draw(pMemDc->m_hDC, rect);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ  
+image.Draw(pMemDc->m_hDC, rect);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†…  
 image.Detach();
 if(m_iTempDirection==0)
 {
-	ImageFrom_IDResource(IDB_PNG47,"PNG",&image);//ÉÏĞĞ
+	ImageFrom_IDResource(IDB_PNG47,"PNG",&image);//ä¸Šè¡Œ
 }
 else
 {
-	ImageFrom_IDResource(IDB_PNG48,"PNG",&image);//ÏÂĞĞ
+	ImageFrom_IDResource(IDB_PNG48,"PNG",&image);//ä¸‹è¡Œ
 }
-image.Draw(pMemDc->m_hDC, m_RectDirectionShow);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ  
+image.Draw(pMemDc->m_hDC, m_RectDirectionShow);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†…  
 image.Detach();
 
 if(m_iTempAddMileage==0)
 {
-	ImageFrom_IDResource(IDB_PNG49,"PNG",&image);//Àï³ÌÔö¼Ó
+	ImageFrom_IDResource(IDB_PNG49,"PNG",&image);//é‡Œç¨‹å¢åŠ 
 }
 else
 {
-	ImageFrom_IDResource(IDB_PNG50,"PNG",&image);//Àï³Ì¼õÉÙ
+	ImageFrom_IDResource(IDB_PNG50,"PNG",&image);//é‡Œç¨‹å‡å°‘
 }
-image.Draw(pMemDc->m_hDC, m_RectAddMileageShow);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ 
+image.Draw(pMemDc->m_hDC, m_RectAddMileageShow);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†… 
 image.Detach();
 
 m_dbVoltage_1=55.0;
@@ -2637,7 +2637,7 @@ if(m_dbVoltage_1>=52.0)
 {
 	ImageFrom_IDResource(IDB_PNG56,"PNG",&image); 
 }
-image.Draw(pMemDc->m_hDC, m_RectBatteryShow_1);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ
+image.Draw(pMemDc->m_hDC, m_RectBatteryShow_1);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†…
 image.Detach();
 
 if(m_dbVoltage_2>=52.0)
@@ -2659,34 +2659,34 @@ if(m_dbVoltage_2>=52.0)
 {
 	ImageFrom_IDResource(IDB_PNG56,"PNG",&image);
 }
-image.Draw(pMemDc->m_hDC, m_RectBatteryShow_2);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ 
+image.Draw(pMemDc->m_hDC, m_RectBatteryShow_2);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†… 
 image.Detach();
 
 	CFont font;
 	//font.CreateFont(15, 0, 0, 0, FW_BOLD,FALSE, FALSE, FALSE, 0, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,   DEFAULT_QUALITY, DEFAULT_PITCH | FF_ROMAN, L"Times New Roman");
 	font.CreateFont(40, 0, 0, 0, FW_NORMAL,FALSE, FALSE, FALSE, 0, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,   DEFAULT_QUALITY, DEFAULT_PITCH | FF_ROMAN, "Times New Roman");
 	pMemDc->SetBkMode(TRANSPARENT);
-	pMemDc->SetTextColor(RGB(255,255,255));    //Static¿Ø¼ş1µÄ×ÖÌåÑÕÉ«-ºìÉ«
+	pMemDc->SetTextColor(RGB(255,255,255));    //Staticæ§ä»¶1çš„å­—ä½“é¢œè‰²-çº¢è‰²
 	pMemDc->SelectObject(&font); 
 
-	//ÈÕÆÚÊ±¼äÇøÓò
+	//æ—¥æœŸæ—¶é—´åŒºåŸŸ
 	CTime time = CTime::GetCurrentTime();       
 	str.Format("%04d-%02d-%02d %02d:%02d:%02d",time.GetYear(),time.GetMonth(),time.GetDay(),time.GetHour(),time.GetMinute(),time.GetSecond());  
     pMemDc->DrawText(str,m_RectDateTimeShow, DT_CENTER | DT_EDITCONTROL | DT_WORDBREAK);
-	//Àï³ÌÇøÓò
+	//é‡Œç¨‹åŒºåŸŸ
 	//str.Format(L"2017-03-01 16:32:10");
     pMemDc->DrawText(m_strTempMileage,m_RectMileageShow, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
-	//µç³Ø1ÇøÓò
+	//ç”µæ± 1åŒºåŸŸ
 	str.Format("%.2fV",m_dbVoltage_1);
     pMemDc->DrawText(str,m_RectElectricShow_1, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
-	//µç³Ø2ÇøÓò
+	//ç”µæ± 2åŒºåŸŸ
 	str.Format("%.2fV",m_dbVoltage_2);
     pMemDc->DrawText(str,m_RectElectricShow_2, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
-	//ËÙ¶ÈÇøÓò
+	//é€Ÿåº¦åŒºåŸŸ
 	SpeedVal=m_dbSpeed*m_XiShu[1];
 	str.Format("%.2fKm/h",SpeedVal);
     pMemDc->DrawText(str,m_RectSpeedShow, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
-	////×ÜÀï³ÌÇøÓò
+	////æ€»é‡Œç¨‹åŒºåŸŸ
 	//str.Format(L"%.2fKm",m_dbTotalMileage);
  //   dc.DrawText(str,m_RectTotalMileageShow, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
 	//CRect rect;
@@ -2694,7 +2694,7 @@ image.Detach();
 	//rect.bottom=m_RectTotalMileageShow.bottom+3;
 	//rect.top =m_RectTotalMileageShow.top-3;
 	//rect.right=m_RectTotalMileageShow.right+3;
- //   dc.FillSolidRect(&rect,RGB(255,0,0));//ºìÉ«Ìî³ä
+ //   dc.FillSolidRect(&rect,RGB(255,0,0));//çº¢è‰²å¡«å……
 	font.DeleteObject(); 
 
 	CPen RectPen(PS_SOLID,5,RGB(255,0,0));
@@ -2706,10 +2706,10 @@ image.Detach();
 	//font.CreateFont(15, 0, 0, 0, FW_BOLD,FALSE, FALSE, FALSE, 0, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,   DEFAULT_QUALITY, DEFAULT_PITCH | FF_ROMAN, L"Times New Roman");
 	font.CreateFont(28, 0, 0, 0, FW_NORMAL,FALSE, FALSE, FALSE, 0, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,   DEFAULT_QUALITY, DEFAULT_PITCH | FF_ROMAN, "Times New Roman");
 	pMemDc->SetBkMode(TRANSPARENT);
-	pMemDc->SetTextColor(RGB(255,255,255));    //Static¿Ø¼ş1µÄ×ÖÌåÑÕÉ«-ºìÉ«
+	pMemDc->SetTextColor(RGB(255,255,255));    //Staticæ§ä»¶1çš„å­—ä½“é¢œè‰²-çº¢è‰²
 	pMemDc->SelectObject(&font); 
 
-	//ĞÅÏ¢ÇøÓò
+	//ä¿¡æ¯åŒºåŸŸ
 	//str.Format(L"2017-03-01 16:32:10.333 T:9999999-9999999 A:9999999-9999999 F:200.345");
 	//str.Format(L"333 T:9999999-9999999 A:9999999-9999999 F:200.345");
 	//DT_CALCRECT | DT_WORDBREAK  |  DT_EDITCONTROL|  DT_NOPREFIX | DT_EXTERNALLEADING
@@ -2720,7 +2720,7 @@ image.Detach();
 		m_strInfo=m_strInfo.Mid(1,iInfo-1);
     pMemDc->DrawText(m_strInfo,m_RectInfoShow, DT_LEFT | DT_EDITCONTROL | DT_WORDBREAK);
 
-	pWnd->GetClientRect(&rect);//»ñÈ¡¾ä±úÖ¸Ïò¿Ø¼şÇøÓòµÄ´óĞ¡
+	pWnd->GetClientRect(&rect);//è·å–å¥æŸ„æŒ‡å‘æ§ä»¶åŒºåŸŸçš„å¤§å°
 	pDc->BitBlt(0,0,rect.Width(),rect.Height(),pMemDc,0,0,SRCCOPY);
 
     font.DeleteObject(); 
@@ -2731,7 +2731,7 @@ image.Detach();
 void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	CWnd *pWnd = NULL;  
-	pWnd    = GetDlgItem(IDC_VIEW_WND3);//»ñÈ¡¿Ø¼ş¾ä±ú  
+	pWnd    = GetDlgItem(IDC_VIEW_WND3);//è·å–æ§ä»¶å¥æŸ„  
 	if(m_iWindowMode!=1)return;
 
 	if(m_RectExitShow.PtInRect(point)){
@@ -2739,10 +2739,10 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 		//if(m_iExitCount==1)
 		//{
 			m_iWindowMode=2;
-			// ÏÔÊ¾TitleBar
+			// æ˜¾ç¤ºTitleBar
 			ModifyStyle(0, WS_CAPTION, SWP_FRAMECHANGED);
-			//ModifyStyle(WS_CAPTION,0,1);//Èç¹û²»ÏëÈ¥µô±êÌâÀ¸£¬È¥µô¸Ã¾ä¡£
-			//É¾³ı±êÌâÀ¸·ç¸ñ 
+			//ModifyStyle(WS_CAPTION,0,1);//å¦‚æœä¸æƒ³å»æ‰æ ‡é¢˜æ ï¼Œå»æ‰è¯¥å¥ã€‚
+			//åˆ é™¤æ ‡é¢˜æ é£æ ¼ 
 			//ModifyStyle(WS_CAPTION, 0, SWP_FRAMECHANGED); 
 		
 			//ShowWindow(SW_SHOWMAXIMIZED);
@@ -2757,29 +2757,29 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 			GetDlgItem(IDC_RETURN)->ShowWindow(SW_SHOW);
 			ShowWindow(SW_NORMAL);
 		//}
-	}else if(m_RectWholeMileageButton.PtInRect(point)){//ÕûÀï³ÌĞ£Õı
+	}else if(m_RectWholeMileageButton.PtInRect(point)){//æ•´é‡Œç¨‹æ ¡æ­£
 		m_iDotInfo=1;
 		WritePosInfo(m_iDotInfo);
-	}else if(m_RectForkStartButton.PtInRect(point)){//²íÆğ
+	}else if(m_RectForkStartButton.PtInRect(point)){//å²”èµ·
 		m_iDotInfo=2;
 		WritePosInfo(m_iDotInfo);
-	}else if(m_RectForkFinishButton.PtInRect(point)){//²íÖÕ
+	}else if(m_RectForkFinishButton.PtInRect(point)){//å²”ç»ˆ
 		m_iDotInfo=3;
 		WritePosInfo(m_iDotInfo);
-	}else if(m_RectCrossingStartButton.PtInRect(point)){//µÀ¿ÚÆğ
+	}else if(m_RectCrossingStartButton.PtInRect(point)){//é“å£èµ·
 		m_iDotInfo=4;
 		WritePosInfo(m_iDotInfo);
-	}else if(m_RectCrossingFinishButton.PtInRect(point)){//µÀ¿ÚÖÕ
+	}else if(m_RectCrossingFinishButton.PtInRect(point)){//é“å£ç»ˆ
 		m_iDotInfo=5;
 		WritePosInfo(m_iDotInfo);
-	}else if(m_RectKeyBack.PtInRect(point)){//ÍË¸ñ
+	}else if(m_RectKeyBack.PtInRect(point)){//é€€æ ¼
 		m_strTempMileage.Delete(m_strTempMileage.GetLength()-1,1);
 		InvalidateRect(&m_RectMileageShow);
-	}else if(m_RectKeyClear.PtInRect(point)){//Çå³ı
+	}else if(m_RectKeyClear.PtInRect(point)){//æ¸…é™¤
 		m_strTempMileage="";
 		InvalidateRect(&m_RectMileageShow);
-	}else if(m_RectKeyOk.PtInRect(point)){//È·¶¨
-	MessageBox("È·¶¨!");
+	}else if(m_RectKeyOk.PtInRect(point)){//ç¡®å®š
+	MessageBox("ç¡®å®š!");
 	}else if(m_RectKey0.PtInRect(point)){//0
 		m_strTempMileage.AppendChar('0');
 		InvalidateRect(&m_RectMileageShow);
@@ -2813,16 +2813,16 @@ void CGigeCameraDemoDlg::OnLButtonDown(UINT nFlags, CPoint point)
 	}else if(m_RectKeyDecimal.PtInRect(point)){//.
 		m_strTempMileage.AppendChar('.');
 		InvalidateRect(&m_RectMileageShow);
-	}else if(m_RectKeyUp.PtInRect(point)){//ÉÏĞĞ
+	}else if(m_RectKeyUp.PtInRect(point)){//ä¸Šè¡Œ
 		m_iTempDirection=0;
 		InvalidateRect(&m_RectDirectionShow);
-	}else if(m_RectKeyDwon.PtInRect(point)){//ÏÂĞĞ
+	}else if(m_RectKeyDwon.PtInRect(point)){//ä¸‹è¡Œ
 		m_iTempDirection=1;
 		InvalidateRect(&m_RectDirectionShow);
-	}else if(m_RectKeyAdd.PtInRect(point)){//Àï³ÌÔö¼Ó
+	}else if(m_RectKeyAdd.PtInRect(point)){//é‡Œç¨‹å¢åŠ 
 		m_iTempAddMileage=0;
 		InvalidateRect(&m_RectAddMileageShow);
-	}else if(m_RectKeySubtract.PtInRect(point)){//Àï³Ì¼õÉÙ
+	}else if(m_RectKeySubtract.PtInRect(point)){//é‡Œç¨‹å‡å°‘
 		m_iTempAddMileage=1;
 		InvalidateRect(&m_RectAddMileageShow);
 	}
@@ -2840,23 +2840,23 @@ BOOL CGigeCameraDemoDlg::OnEraseBkgnd(CDC* pDC)
 			//CRect   rect;
 			//CDC *pDc = NULL;  
 			//CWnd *pWnd = NULL;  
-			//pWnd    = GetDlgItem(IDC_VIEW_WND3);//»ñÈ¡¿Ø¼ş¾ä±ú  
+			//pWnd    = GetDlgItem(IDC_VIEW_WND3);//è·å–æ§ä»¶å¥æŸ„  
 			//pWnd->MoveWindow(0,0,1024,768);
-			//pWnd->GetClientRect(&rect);//»ñÈ¡¾ä±úÖ¸Ïò¿Ø¼şÇøÓòµÄ´óĞ¡
-			//pDc = pWnd->GetDC();//»ñÈ¡pictureµÄDC  
-			//ImageFrom_IDResource(IDB_PNG57,"PNG",&image);//±³¾°Í¼
+			//pWnd->GetClientRect(&rect);//è·å–å¥æŸ„æŒ‡å‘æ§ä»¶åŒºåŸŸçš„å¤§å°
+			//pDc = pWnd->GetDC();//è·å–pictureçš„DC  
+			//ImageFrom_IDResource(IDB_PNG57,"PNG",&image);//èƒŒæ™¯å›¾
 			//rect.top =0;
 			//rect.left =0;
 			//rect.bottom=image.GetHeight();   
 			//rect.right =image.GetWidth();  
-			//image.Draw(pDc->m_hDC, rect);//½«Í¼Æ¬»æÖÆµ½picture±íÊ¾µÄÇøÓòÄÚ  
+			//image.Draw(pDc->m_hDC, rect);//å°†å›¾ç‰‡ç»˜åˆ¶åˆ°pictureè¡¨ç¤ºçš„åŒºåŸŸå†…  
 			//image.Detach();
 		}
 		return true;
 	}
 	else
 	{
-		//HBRUSH hBrush =  CreateSolidBrush(DLG_BACKGROUND); //´´½¨±³¾°Ë¢;
+		//HBRUSH hBrush =  CreateSolidBrush(DLG_BACKGROUND); //åˆ›å»ºèƒŒæ™¯åˆ·;
 
 	
        // pDC->SetBkMode(TRANSPARENT);  
@@ -2894,53 +2894,53 @@ void CGigeCameraDemoDlg::WritePosInfo(int Value)
 void CGigeCameraDemoDlg::SetUI(void)
 {
 	m_RectExitShow.SetRect(32,19,96,92);
-	m_RectDateTimeShow.SetRect(642,48,1000,86);//ÈÕÆÚÊ±¼ä
-	m_RectMeterShow.SetRect(82,51,543,288);//±íÅÌÇøÓò°üº¬ËÙ¶ÈÇø
-	m_RectMileageShow.SetRect(22,326,450,358);//ÊäÈëÀï³Ì
-	m_RectInfoShow.SetRect(22,728,1000,760);//ĞÅÏ¢ÇøÓò
-	m_RectSpeedShow.SetRect(218,210,399,244);//ËÙ¶ÈÇøÓò
+	m_RectDateTimeShow.SetRect(642,48,1000,86);//æ—¥æœŸæ—¶é—´
+	m_RectMeterShow.SetRect(82,51,543,288);//è¡¨ç›˜åŒºåŸŸåŒ…å«é€Ÿåº¦åŒº
+	m_RectMileageShow.SetRect(22,326,450,358);//è¾“å…¥é‡Œç¨‹
+	m_RectInfoShow.SetRect(22,728,1000,760);//ä¿¡æ¯åŒºåŸŸ
+	m_RectSpeedShow.SetRect(218,210,399,244);//é€Ÿåº¦åŒºåŸŸ
 
 	
-	m_RectBatteryShow_1.SetRect(710,163,741,230);//µç³Ø1ÇøÓò
-	m_RectBatteryShow_2.SetRect(901,163,932,230);//µç³Ø2ÇøÓò
-	m_RectElectricShow_1.SetRect(667,240,784,277);//µçÁ¿1ÇøÓò
-	m_RectElectricShow_2.SetRect(857,240,976,277);//µçÁ¿2ÇøÓò
+	m_RectBatteryShow_1.SetRect(710,163,741,230);//ç”µæ± 1åŒºåŸŸ
+	m_RectBatteryShow_2.SetRect(901,163,932,230);//ç”µæ± 2åŒºåŸŸ
+	m_RectElectricShow_1.SetRect(667,240,784,277);//ç”µé‡1åŒºåŸŸ
+	m_RectElectricShow_2.SetRect(857,240,976,277);//ç”µé‡2åŒºåŸŸ
 
-	m_RectDirectionShow.SetRect(468,325,537,363);//ÉÏÏÂĞĞÇøÓò
-	m_RectAddMileageShow.SetRect(542,325,610,363);//¼Ó¼õÀï³ÌÇøÓò
+	m_RectDirectionShow.SetRect(468,325,537,363);//ä¸Šä¸‹è¡ŒåŒºåŸŸ
+	m_RectAddMileageShow.SetRect(542,325,610,363);//åŠ å‡é‡Œç¨‹åŒºåŸŸ
 
-	m_RectWholeMileageButton.SetRect(646,369,1003,482);//ÕûÀï³ÌĞ£Õı°´Å¥
-	m_RectForkStartButton.SetRect(646,489,818,601);//µÀ²íÆğµã°´Å¥
-	m_RectForkFinishButton.SetRect(831,488,1003,601);//µÀ²íÖÕµã°´Å¥
-	m_RectCrossingStartButton.SetRect(646,607,818,720);//µÀ¿ÚÆğµã°´Å¥
-	m_RectCrossingFinishButton.SetRect(831,607,1003,720);//µÀ¿ÚÖÕµã°´Å¥
+	m_RectWholeMileageButton.SetRect(646,369,1003,482);//æ•´é‡Œç¨‹æ ¡æ­£æŒ‰é’®
+	m_RectForkStartButton.SetRect(646,489,818,601);//é“å²”èµ·ç‚¹æŒ‰é’®
+	m_RectForkFinishButton.SetRect(831,488,1003,601);//é“å²”ç»ˆç‚¹æŒ‰é’®
+	m_RectCrossingStartButton.SetRect(646,607,818,720);//é“å£èµ·ç‚¹æŒ‰é’®
+	m_RectCrossingFinishButton.SetRect(831,607,1003,720);//é“å£ç»ˆç‚¹æŒ‰é’®
 	
 	
 
-	m_RectKey7.SetRect(18,368,130,453);//KEY7°´Å¥
-	m_RectKey8.SetRect(137,368,252,453);//KEY8°´Å¥
-	m_RectKey9.SetRect(259,368,370,453);//KEY9°´Å¥
-	m_RectKeyUp.SetRect(380,368,492,453);//UP°´Å¥
-	m_RectKeyBack.SetRect(501,368,614,453);//BACK°´Å¥
+	m_RectKey7.SetRect(18,368,130,453);//KEY7æŒ‰é’®
+	m_RectKey8.SetRect(137,368,252,453);//KEY8æŒ‰é’®
+	m_RectKey9.SetRect(259,368,370,453);//KEY9æŒ‰é’®
+	m_RectKeyUp.SetRect(380,368,492,453);//UPæŒ‰é’®
+	m_RectKeyBack.SetRect(501,368,614,453);//BACKæŒ‰é’®
 
-	m_RectKey4.SetRect(18,456,130,542);//KEY4°´Å¥
-	m_RectKey5.SetRect(139,456,251,542);//KEY5°´Å¥
-	m_RectKey6.SetRect(258,456,372,542);//KEY6°´Å¥
-	m_RectKeyDwon.SetRect(379,456,492,542);//DOWN°´Å¥
-	m_RectKeyClear.SetRect(501,456,613,542);//CLEAR°´Å¥
+	m_RectKey4.SetRect(18,456,130,542);//KEY4æŒ‰é’®
+	m_RectKey5.SetRect(139,456,251,542);//KEY5æŒ‰é’®
+	m_RectKey6.SetRect(258,456,372,542);//KEY6æŒ‰é’®
+	m_RectKeyDwon.SetRect(379,456,492,542);//DOWNæŒ‰é’®
+	m_RectKeyClear.SetRect(501,456,613,542);//CLEARæŒ‰é’®
 
-	m_RectKey1.SetRect(18,545,130,630);//KEY1°´Å¥
-	m_RectKey2.SetRect(138,545,251,630);//KEY2°´Å¥
-	m_RectKey3.SetRect(258,545,372,630);//KEY3°´Å¥
-	m_RectKeyAdd.SetRect(380,545,492,630);//ADD°´Å¥
+	m_RectKey1.SetRect(18,545,130,630);//KEY1æŒ‰é’®
+	m_RectKey2.SetRect(138,545,251,630);//KEY2æŒ‰é’®
+	m_RectKey3.SetRect(258,545,372,630);//KEY3æŒ‰é’®
+	m_RectKeyAdd.SetRect(380,545,492,630);//ADDæŒ‰é’®
 
 
-	m_RectKey0.SetRect(18,634,250,720);//KEY0°´Å¥
-	m_RectKeyDecimal.SetRect(259,634,372,720);//DECIMAL°´Å¥
-	m_RectKeySubtract.SetRect(380,634,492,720);//SUBTRACT°´Å¥
+	m_RectKey0.SetRect(18,634,250,720);//KEY0æŒ‰é’®
+	m_RectKeyDecimal.SetRect(259,634,372,720);//DECIMALæŒ‰é’®
+	m_RectKeySubtract.SetRect(380,634,492,720);//SUBTRACTæŒ‰é’®
 	
 	
-	m_RectKeyOk.SetRect(500,545,613,720);//OK°´Å¥
+	m_RectKeyOk.SetRect(500,545,613,720);//OKæŒ‰é’®
 
 }
 
@@ -2955,7 +2955,7 @@ int CGigeCameraDemoDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//HideCursor();
 	    ////    CRect c;
      //   //    this->GetWindowRect(&c);
-     //       this->ShowWindow(SW_SHOWNA);//¼òµ¥µÄÏÔÊ¾Ö÷´°¿ÚÍêÊÂ¶ù 
+     //       this->ShowWindow(SW_SHOWNA);//ç®€å•çš„æ˜¾ç¤ºä¸»çª—å£å®Œäº‹å„¿ 
      //       //this->SetActiveWindow();
      //       this->SetForegroundWindow();    
      //       //this->SetWindowPos(this,LOWORD(lParam),HIWORD(lParam),c.Width(),c.Height(),SWP_NOACTIVATE);
@@ -2965,7 +2965,7 @@ int CGigeCameraDemoDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
-void CGigeCameraDemoDlg::HideCursor()//Òş²Ø¹â±ê
+void CGigeCameraDemoDlg::HideCursor()//éšè—å…‰æ ‡
 {
  CONSOLE_CURSOR_INFO cursor_info = {1, 0}; 
  SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
